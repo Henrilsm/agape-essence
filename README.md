@@ -1,4 +1,4 @@
-Site para clinica de estetica Ágape Essence Em Desenvolvimento
+Site para clínica de estética Ágape Essence Em Desenvolvimento
 
 Contribuintes:
 
