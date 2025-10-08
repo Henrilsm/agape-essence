@@ -1,6 +1,6 @@
 Site para clinica de estetica Ágape Essence Em Desenvolvimento
 
-Contrinbuintes:
+Contribuintes:
 
 Gabriel Vera Cruz
 
