@@ -9,7 +9,12 @@ export default function Footer() {
         <a href="#" className={styles.iconLink} aria-label="Facebook">
           <FaFacebookF size={24} />
         </a>
-        <a href="#" className={styles.iconLink} aria-label="Instagram">
+        <a href="https://www.instagram.com/agapeessencehof?igsh=MTY4aHBsbGJsMXNtMA==" 
+        className={styles.iconLink} 
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
           <FaInstagram size={24} />
         </a>
         <a
