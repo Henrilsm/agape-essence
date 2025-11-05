@@ -1,16 +1,21 @@
 import Link from "next/link";
+import Image from "next/image"; // Importa o componente Image
 import styles from "./Header.module.css";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <Link href="/">
-            ÁGAPE ESSENCE
-            <span className={styles.sublogo}>HARMONIZAÇÃO OROFACIAL</span>
-          </Link>
-        </div>
+        <Link href="/" className={styles.logoLink}>
+          <Image
+            src="/logo.png" // Caminho a partir da pasta 'public'
+            alt="Logo Agape Essence"
+            width={100} // Ajuste a largura conforme necessário
+            height={100} 
+            priority 
+          />
+        </Link>
+
         <nav className={styles.nav}>
           <Link href="/" className={styles.navButton}>
             Início
@@ -22,6 +27,7 @@ export default function Header() {
             Local
           </Link>
         </nav>
+
         <div className={styles.search}>
           <button className={styles.searchButton}>🔍</button>
         </div>

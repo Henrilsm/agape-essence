@@ -1,8 +1,10 @@
 .container {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem 1rem;
+    margin: 0 auto; 
+    padding: 0 1rem;
     text-align: center;
+    position: relative; 
+    z-index: 1;
 }
 
 .mainTitle {
@@ -73,6 +75,8 @@
 
 .cardImage {
     height: 200px;
+    width: 100%; 
+    object-fit: cover; 
     background-color: var(--primary-color);
 }
 
@@ -162,4 +166,51 @@
     .searchButton {
         align-self: flex-end;
     }
+
+.clearButton {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.noResults {
+    width: 100%;
+    text-align: center;
+    color: var(--text-quote-color);
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .clearButton {
+        margin-left: 1rem;
+    }
+}
+
+.backgroundWrapper {
+  background-color: var(--primary-light-color);
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background-color: var(--primary-color);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(50px);
+}
 }
