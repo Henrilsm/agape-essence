@@ -4,59 +4,9 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./page.module.css";
 import { useRef, useState } from "react";
 import Image from "next/image";
+import Link from 'next/link';
+import { allServicos } from './servicosData.js';
 
-const allServicos = [
-  {
-    id: 1,
-    nome: "Aplicação de Toxina Botulínica",
-    imagem: "/servicos/1.jpg",
-    tags: ["rosto", "rejuvenescimento"],
-  },
-  {
-    id: 2,
-    nome: "Preenchimentos Faciais",
-    imagem: "/servicos/2.png",
-    tags: ["rosto", "labios"],
-  },
-  {
-    id: 3,
-    nome: "Bioestimulador de Colágeno",
-    imagem: "/servicos/3.png",
-    tags: ["rosto", "pescoco", "rejuvenescimento"],
-  },
-  {
-    id: 4,
-    nome: "Jato de Plasma",
-    imagem: "/servicos/4.webp",
-    tags: ["rosto", "manchas"],
-  },
-  {
-    id: 5,
-    nome: "Microagulhamento",
-    imagem: "/servicos/5.jpg",
-    tags: ["rosto", "manchas", "rejuvenescimento"],
-  },
-  {
-    id: 6,
-    nome: "Ultrassom Microfocado",
-    imagem: "/servicos/6.jpg",
-    tags: ["rosto", "pescoco", "rejuvenescimento"],
-  },
-  {
-    id: 7,
-    nome: "Skinbooster",
-    imagem: "/servicos/7.jpg",
-    tags: ["rosto", "labios", "pescoco", "hidratacao"],
-  },
-  {
-    id: 8,
-    nome: "Fios de PDO",
-    imagem: "/servicos/8.webp",
-    tags: ["rosto", "rejuvenescimento"],
-  },
-];
-
-const numeroWhatsapp = ""; 
 
 export default function ServicosPage() {
   const carouselRef = useRef(null);
@@ -86,21 +36,17 @@ export default function ServicosPage() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-
     let servicosFiltrados = allServicos;
-
     if (filtroRegiao) {
       servicosFiltrados = servicosFiltrados.filter((servico) =>
         servico.tags.includes(filtroRegiao)
       );
     }
-
     if (filtroObjetivo) {
       servicosFiltrados = servicosFiltrados.filter((servico) =>
         servico.tags.includes(filtroObjetivo)
       );
     }
-
     setServicosExibidos(servicosFiltrados);
   };
 
@@ -135,9 +81,6 @@ export default function ServicosPage() {
           >
             {servicosExibidos.length > 0 ? (
               servicosExibidos.map((servico) => {
-                const mensagem = encodeURIComponent(
-                  `Olá! Vi o serviço de ${servico.nome} no site e gostaria de mais informações.`
-                );
                 return (
                   <div key={servico.id} className={styles.card}>
                     <Image
@@ -149,14 +92,14 @@ export default function ServicosPage() {
                     />
                     <div className={styles.cardBody}>
                       <h3>{servico.nome}</h3>
-                      <a
-                        href={`https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagem}`}
+
+                      <Link
+                        href={`/servicos/${servico.slug}`}
                         className={styles.cardButton}
-                        target="_blank"
-                        rel="noopener noreferrer"
                       >
                         Saiba Mais
-                      </a>
+                      </Link>
+
                     </div>
                   </div>
                 );
@@ -197,7 +140,7 @@ export default function ServicosPage() {
             <div className={styles.formGroup}>
               <label htmlFor="objetivo">Objetivo do tratamento</label>
               <select
-                id="objetIVO"
+                id="objetivo"
                 name="objetivo"
                 value={filtroObjetivo}
                 onChange={(e) => setFiltroObjetivo(e.target.value)}
