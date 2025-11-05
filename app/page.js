@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -22,7 +23,9 @@ export default function Home() {
             </strong>
           </h2>
           <p>Seja bem-vinda ao Ágape Essence.</p>
-          <button className={styles.button}>Sobre nós &rarr;</button>
+          <Link href="/sobre-nos" className={styles.button}>
+            Sobre nós →
+          </Link>
         </div>
       </div>
     </div>
