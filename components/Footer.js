@@ -6,9 +6,6 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.socialIcons}>
-        <a href="#" className={styles.iconLink} aria-label="Facebook">
-          <FaFacebookF size={24} />
-        </a>
         <a href="https://www.instagram.com/agapeessencehof?igsh=MTY4aHBsbGJsMXNtMA==" 
         className={styles.iconLink} 
         aria-label="Instagram"
