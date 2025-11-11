@@ -1,0 +1,146 @@
+/* app/servicos/[slug]/page.module.css */
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* --- Botão de Voltar --- */
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.backLink:hover {
+    text-decoration: underline;
+}
+
+/* --- Cabeçalho (Título, Imagem, CTA) --- */
+.header {
+    display: flex;
+    flex-direction: column-reverse;
+    /* Imagem primeiro em telas pequenas */
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.headerText {
+    flex: 1;
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.headerImageContainer {
+    flex: 1;
+    width: 100%;
+}
+
+.headerImage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Botão de Agendamento (CTA) --- */
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #25D366;
+    /* Verde WhatsApp */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+    transform: scale(1.05);
+}
+
+.ctaButton>svg {
+    font-size: 1.4rem;
+}
+
+
+/* --- Grid de Detalhes (Benefícios, etc.) --- */
+.detailsGrid {
+    display: grid;
+    gap: 1.5rem;
+    /* Cria 1, 2 ou 3 colunas dependendo do espaço */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.detailCard {
+    background-color: var(--primary-light-color);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.detailCard p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.list li {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 1.75rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+/* Adiciona um "check" customizado */
+.list li::before {
+    content: '✔';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* --- Media Query para telas maiores --- */
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        /* Texto e imagem lado a lado */
+        gap: 3rem;
+    }
+}
