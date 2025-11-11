@@ -29,7 +29,8 @@ export default function Footer() {
           <p>Todos os direitos reservados.</p>
         </div>
         <div className={styles.address}>
-          <p>Rio Mar Trade Center - Av. República do Líbano, 256</p>
+          <p>Rio Mar Trade Center - Torre 4</p>
+          <p>Av. República do Líbano, nº 256, 9º andar, Sala 918</p>
           <p>Pina, Recife - PE</p>
         </div>
       </div>
