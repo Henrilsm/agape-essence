@@ -1,33 +1,38 @@
-import styles from "./Footer.module.css";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { MdMailOutline } from "react-icons/md";
+import Link from 'next/link';
+import { FaInstagram, FaEnvelope } from 'react-icons/fa';
+import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.socialIcons}>
-        <a href="https://www.instagram.com/agapeessencehof?igsh=MTY4aHBsbGJsMXNtMA==" 
-        className={styles.iconLink} 
-        aria-label="Instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-        >
-          <FaInstagram size={24} />
-        </a>
-        <a
-          href="mailto:contato@agapeessence.com"
-          className={styles.iconLink}
-          aria-label="Email"
-        >
-          <MdMailOutline size={24} />
-        </a>
+      <div className={styles.container}>
+        <div className={styles.social}>
+          <a
+            href="https://www.instagram.com/agapeessencehof"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialLink}
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="mailto:contato@agapeessence.com"
+            className={styles.socialLink}
+            aria-label="Email"
+          >
+            <FaEnvelope />
+          </a>
+        </div>
+        <div className={styles.copyright}>
+          <p>© {new Date().getFullYear()} Ágape Essence</p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+        <div className={styles.address}>
+          <p>Rio Mar Trade Center - Av. República do Líbano, 256</p>
+          <p>Pina, Recife - PE</p>
+        </div>
       </div>
-      <p className={styles.copyright}>
-        © 2025 Ágape Essence. Todos os direitos reservados.
-      </p>
-      <p className={styles.address}>
-        Rio Mar Trade Center - Av. República do Líbano, 256 - Pina, Recife - PE
-      </p>
     </footer>
   );
 }

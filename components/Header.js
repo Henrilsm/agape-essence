@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Image from "next/image"; // Importa o componente Image
+import Image from "next/image";
+import { FaSearch } from "react-icons/fa";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -8,31 +9,35 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" className={styles.logoLink}>
           <Image
-            src="/logo.png" // Caminho a partir da pasta 'public'
+            src="/logo.png"
             alt="Logo Agape Essence"
-            width={100} // Ajuste a largura conforme necessário
-            height={100} 
-            priority 
+            width={80}
+            height={80}
+            priority
           />
         </Link>
 
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.navButton}>
-            Início
-          </Link>
-          <Link href="/servicos" className={styles.navButton}>
-            Serviços
-          </Link>
-          <Link href="/local" className={styles.navButton}>
-            Local
-          </Link>
-        </nav>
+        <div className={styles.navAndSearch}>
+          <nav className={styles.nav}>
+            <Link href="/" className={styles.navLink}>
+              Início
+            </Link>
+            <Link href="/servicos" className={styles.navLink}>
+              Serviços
+            </Link>
+            <Link href="/local" className={styles.navLink}>
+              Local
+            </Link>
+          </nav>
 
-        <div className={styles.search}>
-          <button className={styles.searchButton}>🔍</button>
+          <div className={styles.search}>
+            <button className={styles.searchButton}>
+              <FaSearch />
+            </button>
+          </div>
         </div>
+
       </div>
-      <div className={styles.bottomBar}></div>
     </header>
   );
 }
