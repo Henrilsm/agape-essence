@@ -1,3 +1,4 @@
+import { FaWhatsapp } from 'react-icons/fa';
 import styles from "./WhatsappButton.module.css";
 
 export default function WhatsappButton() {
@@ -9,6 +10,7 @@ export default function WhatsappButton() {
       className={styles.whatsappButton}
       aria-label="Iniciar conversa no WhatsApp"
     >
+    <FaWhatsapp />
     </a>
   );
 }
