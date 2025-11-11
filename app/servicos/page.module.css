@@ -1,201 +1,7 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto; 
-    padding: 0 1rem;
-    text-align: center;
-    position: relative; 
-    z-index: 1;
-}
-
-.mainTitle {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin-bottom: 0.5rem;
-}
-
-.subtitle {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 3rem;
-}
-
-.carouselContainer {
-    position: relative;
-    margin-bottom: 4rem;
-}
-
-.carousel {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding: 1rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.carouselButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: white;
-    border: 1px solid #eee;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: var(--primary-color);
-    z-index: 2;
-}
-
-.left {
-    left: -15px;
-}
-
-.right {
-    right: -15px;
-}
-
-.card {
-    min-width: 250px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-}
-
-.cardImage {
-    height: 200px;
-    width: 100%; 
-    object-fit: cover; 
-    background-color: var(--primary-color);
-}
-
-.cardBody {
-    padding: 1.5rem;
-    background-color: var(--primary-light-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-.cardBody h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.cardBody p {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-
-.searchContainer {
-    background-color: #fceeee;
-    border-radius: 12px;
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.searchContainer h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.searchForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.formGroup {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.formGroup label {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.formGroup select {
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: white;
-    font-size: 1rem;
-}
-
-.searchButton {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: center;
-}
-
-@media (min-width: 768px) {
-    .searchForm {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: center;
-    }
-
-    .formGroup {
-        flex: 1;
-    }
-
-    .searchButton {
-        align-self: flex-end;
-    }
-
-.clearButton {
-    background-color: transparent;
-    color: var(--primary-color);
-    padding: 0.8rem 1.5rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: flex-end;
-}
-
-.noResults {
-    width: 100%;
-    text-align: center;
-    color: var(--text-quote-color);
-    font-size: 1.1rem;
-    padding: 2rem;
-}
-
-@media (min-width: 768px) {
-    .clearButton {
-        margin-left: 1rem;
-    }
-}
-
+/* --- NOVOS ESTILOS PARA O FUNDO --- */
 .backgroundWrapper {
-  background-color: var(--primary-light-color);
-  padding: 2rem 0;
+  background-color: var(--background-color); /* Fundo #F6F6F6 */
+  padding: 3rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -207,10 +13,234 @@
   right: -150px;
   width: 400px;
   height: 400px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color); /* Rosa Queimado/Nude */
   opacity: 0.3;
   border-radius: 50%;
   z-index: 0;
   filter: blur(50px);
 }
+
+/* --- CONTAINER PRINCIPAL ATUALIZADO --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- TÍTULOS --- */
+.mainTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color); /* Dourado */
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: 'Playfair Display', serif; /* Fonte Elegante */
+  font-size: 2.5rem; /* Um pouco maior */
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+}
+
+/* --- CARROSSEL (Estilos antigos mantidos) --- */
+.carouselContainer {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--white-color);
+  border: 1px solid #eee;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--primary-color); /* Dourado */
+  z-index: 2;
+}
+
+.left {
+  left: -15px;
+}
+
+.right {
+  right: -15px;
+}
+
+/* --- ESTILOS DOS CARDS ATUALIZADOS --- */
+.card {
+  min-width: 270px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--white-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImage {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  background-color: var(--neutral-color); /* Cor Areia como placeholder */
+}
+
+.cardBody {
+  padding: 1.5rem;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.cardBody h3 {
+  font-family: 'Playfair Display', serif; /* Fonte Elegante */
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Estilo para o link "Saiba Mais" que vem do JS */
+.cardButton {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-color); /* Dourado */
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cardButton:hover {
+  font-weight: 700;
+}
+
+/* --- FORMULÁRIO DE BUSCA ATUALIZADO --- */
+.searchContainer {
+  background-color: var(--neutral-color); /* Cor Areia */
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.searchContainer h3 {
+  font-family: 'Playfair Display', serif; /* Fonte Elegante */
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+/* --- ESTILOS DO FORMULÁRIO (Mantidos) --- */
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.formGroup label {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+.formGroup select {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.searchButton {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--primary-color); /* Dourado */
+  color: var(--white-color);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: center;
+}
+
+.clearButton {
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+  color: var(--white-color);
+  padding: 0.8rem 1.5rem;
+  border: 1px solid var(--white-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.noResults {
+  width: 100%;
+  text-align: center;
+  color: var(--text-quote-color);
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .searchForm {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .formGroup {
+    flex: 1;
+  }
+
+  .searchButton {
+    align-self: flex-end;
+  }
+
+  .clearButton {
+    align-self: flex-end;
+    margin-left: 1rem;
+  }
 }

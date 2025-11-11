@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--primary-light-color);
+  background-color: var(--background-color);
   padding: 3rem 1rem;
   text-align: center;
   position: relative;
@@ -42,7 +42,6 @@
   z-index: 1;
 }
 
-/* Estilo para garantir que o iframe ocupe todo o wrapper */
 .mapWrapper > div > iframe {
   display: block;
   width: 100%;
