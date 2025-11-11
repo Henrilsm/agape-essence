@@ -2,7 +2,7 @@
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./page.module.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from 'next/link';
 import { allServicos } from './servicosData.js';
@@ -11,6 +11,7 @@ import { allServicos } from './servicosData.js';
 export default function ServicosPage() {
   const carouselRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(false);
 
   const [filtroRegiao, setFiltroRegiao] = useState("");
   const [filtroObjetivo, setFiltroObjetivo] = useState("");
@@ -18,7 +19,10 @@ export default function ServicosPage() {
 
   const handleScroll = () => {
     if (carouselRef.current) {
-      setShowLeftArrow(carouselRef.current.scrollLeft > 0);
+      const { scrollLeft, clientWidth, scrollWidth } = carouselRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      // show right arrow only if there's hidden content to the right
+      setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 1);
     }
   };
 
@@ -33,6 +37,24 @@ export default function ServicosPage() {
       carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
     }
   };
+
+  // initialize arrow visibility and update on content changes / resize
+  useEffect(() => {
+    const updateArrows = () => {
+      if (carouselRef.current) {
+        const { scrollLeft, clientWidth, scrollWidth } = carouselRef.current;
+        setShowLeftArrow(scrollLeft > 0);
+        setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 1);
+      }
+    };
+
+    // run on mount and when servicosExibidos changes
+    updateArrows();
+
+    // update on window resize (layout changes)
+    window.addEventListener("resize", updateArrows);
+    return () => window.removeEventListener("resize", updateArrows);
+  }, [servicosExibidos]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -111,12 +133,14 @@ export default function ServicosPage() {
             )}
           </div>
 
-          <button
-            className={`${styles.carouselButton} ${styles.right}`}
-            onClick={handleScrollRight}
-          >
-            <FaChevronRight />
-          </button>
+          {showRightArrow && (
+            <button
+              className={`${styles.carouselButton} ${styles.right}`}
+              onClick={handleScrollRight}
+            >
+              <FaChevronRight />
+            </button>
+          )}
         </div>
 
         <div className={styles.searchContainer}>
