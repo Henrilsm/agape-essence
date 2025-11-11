@@ -1,6 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+// Nós removemos a importação da imagem e passamos a usar o 'src' direto
+// (Vamos manter a correção que fizemos antes)
+
 export default function SobreNosPage() {
   return (
     <div className={styles.container}>
@@ -10,10 +13,9 @@ export default function SobreNosPage() {
             src="/foto-doutoras.png"
             alt="Dra. Paula Francine e Dra. Rosane Vera Cruz"
             className={styles.profileImage}
-            placeholder="blur"
-            width={400}
-            height={400}
-            blurDataURL="/foto-doutoras-blur.png"
+            width={500}
+            height={500}
+            priority
           />
         </div>
         <div className={styles.textContainer}>
@@ -28,9 +30,11 @@ export default function SobreNosPage() {
             fortes juntas, mais guiadas e mais completas.
           </p>
           <blockquote className={styles.quote}>
-            "Unimos o cuidado da Enfermagem com a precisão da Odontologia.
+            {/* CORREÇÃO AQUI */}
+            &ldquo;Unimos o cuidado da Enfermagem com a precisão da Odontologia.
             Unimos a técnica com o toque de amor. Unimos a amizade com o chamado
-            de Deus."
+            de Deus.&rdquo;
+            {/* FIM DA CORREÇÃO */}
             <cite>— Dra. Paula Francine e Dra. Rosane Vera Cruz</cite>
           </blockquote>
         </div>
@@ -59,7 +63,7 @@ export default function SobreNosPage() {
 
       <section className={styles.verseSection}>
         <p className={styles.verse}>
-          "Vosso corpo é o corpo do Espírito Santo"
+          &ldquo;Vosso corpo é o corpo do Espírito Santo&rdquo;
         </p>
         <span className={styles.reference}>1 Coríntios 6:19-20</span>
       </section>
