@@ -101,6 +101,7 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .cardImage {
@@ -108,6 +109,65 @@
   width: 100%;
   object-fit: cover;
   background-color: var(--neutral-color); /* Cor Areia como placeholder */
+}
+
+/* Hover moderno: zoom da imagem, overlay suave, elevação e movimento do conteúdo */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.cardImage {
+  transition: filter 0.35s ease;
+}
+
+.card:hover .cardImage {
+  /* sem zoom: apenas ajuste sutil de brilho para o overlay ficar mais legível */
+  filter: brightness(0.96);
+}
+
+/* overlay gradiente sutil sobre a imagem ao passar o mouse */
+.cardImageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImageWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.12) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.card:hover .cardImageWrapper::after {
+  opacity: 1;
+}
+
+/* movimento suave do corpo do card para destacar o título */
+.cardBody {
+  transform: translateY(0);
+  transition: transform 0.35s ease;
+}
+
+.card:hover .cardBody {
+  transform: translateY(-6px);
+}
+
+/* acreditações visuais do botão */
+.cardButton {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover .cardButton {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transform: translateY(-1px); /* menos "pulo" */
 }
 
 .cardBody {
@@ -139,7 +199,8 @@
 }
 
 .cardButton:hover {
-  font-weight: 700;
+  /* evitar mudança de font-weight para não causar deslocamento/layout shift */
+  font-weight: 500;
 }
 
 /* --- FORMULÁRIO DE BUSCA ATUALIZADO --- */
