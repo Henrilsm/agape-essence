@@ -26,7 +26,7 @@ export default function HomePage() {
         {/* Painel Direito (Imagem) */}
         <div className={styles.rightImagePanel}>
           <Image
-            src="/foto-doutoras.png" // Certifique-se que esta imagem está na pasta 'public/'
+            src="/logo-com-fundo.png" // Certifique-se que esta imagem está na pasta 'public/'
             alt="Fundadoras da Ágape Essence"
             width={500}
             height={500}
