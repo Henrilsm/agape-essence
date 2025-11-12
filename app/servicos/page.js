@@ -85,6 +85,52 @@ export default function ServicosPage() {
           Procedimentos mais procurados na Ágape
         </h1>
 
+        <div className={styles.searchContainer}>
+          <h3>Encontre seu tratamento</h3>
+
+          <form className={styles.searchForm} onSubmit={handleSearch}>
+            <div className={styles.formGroup}>
+              <label htmlFor="regiao">Região do tratamento</label>
+              <select
+                id="regiao"
+                name="regiao"
+                value={filtroRegiao}
+                onChange={(e) => setFiltroRegiao(e.target.value)}
+              >
+                <option value="">Todas as regiões</option>
+                <option value="rosto">Rosto</option>
+                <option value="labios">Lábios</option>
+                <option value="pescoco">Pescoço</option>
+              </select>
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="objetivo">Objetivo do tratamento</label>
+              <select
+                id="objetivo"
+                name="objetivo"
+                value={filtroObjetivo}
+                onChange={(e) => setFiltroObjetivo(e.target.value)}
+              >
+                <option value="">Todos os objetivos</option>
+                <option value="rejuvenescimento">Rejuvenescimento</option>
+                <option value="hidratacao">Hidratação</option>
+                <option value="manchas">Manchas</option>
+              </select>
+            </div>
+            <button type="submit" className={styles.searchButton}>
+              Buscar
+            </button>
+            {(filtroRegiao || filtroObjetivo) && (
+              <button
+                type="button"
+                className={styles.clearButton}
+                onClick={clearFilters}
+              >
+                Limpar filtros
+              </button>
+            )}
+          </form>
+        </div>
 
         <div className={styles.carouselContainer}>
           {showLeftArrow && (
@@ -141,53 +187,6 @@ export default function ServicosPage() {
               <FaChevronRight />
             </button>
           )}
-        </div>
-
-        <div className={styles.searchContainer}>
-          <h3>Encontre seu tratamento</h3>
-
-          <form className={styles.searchForm} onSubmit={handleSearch}>
-            <div className={styles.formGroup}>
-              <label htmlFor="regiao">Região do tratamento</label>
-              <select
-                id="regiao"
-                name="regiao"
-                value={filtroRegiao}
-                onChange={(e) => setFiltroRegiao(e.target.value)}
-              >
-                <option value="">Todas as regiões</option>
-                <option value="rosto">Rosto</option>
-                <option value="labios">Lábios</option>
-                <option value="pescoco">Pescoço</option>
-              </select>
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="objetivo">Objetivo do tratamento</label>
-              <select
-                id="objetivo"
-                name="objetivo"
-                value={filtroObjetivo}
-                onChange={(e) => setFiltroObjetivo(e.target.value)}
-              >
-                <option value="">Todos os objetivos</option>
-                <option value="rejuvenescimento">Rejuvenescimento</option>
-                <option value="hidratacao">Hidratação</option>
-                <option value="manchas">Manchas</option>
-              </select>
-            </div>
-            <button type="submit" className={styles.searchButton}>
-              Buscar
-            </button>
-            {(filtroRegiao || filtroObjetivo) && (
-              <button
-                type="button"
-                className={styles.clearButton}
-                onClick={clearFilters}
-              >
-                Limpar filtros
-              </button>
-            )}
-          </form>
         </div>
       </div>
     </div>
