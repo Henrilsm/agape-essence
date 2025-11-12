@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
         <div className={styles.address}>
           <p>Rio Mar Trade Center - Torre 4</p>
-          <p>Av. República do Líbano, nº 256, Sala 918</p>
+          <p>Av. República do Líbano, nº 256, 9º andar, Sala 918</p>
           <p>Pina, Recife - PE</p>
         </div>
       </div>
