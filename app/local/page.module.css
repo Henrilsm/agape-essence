@@ -58,3 +58,54 @@
   position: relative;
   z-index: 1;
 }
+
+/* Nossa Estrutura gallery styles */
+.structureSection {
+  padding: 2rem 0 3rem 0;
+}
+
+.sectionText {
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.roomsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.room {
+  width: 100%;
+}
+
+.roomImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.roomImg {
+  width: 100%;
+  height: auto; /* preserve natural aspect ratio, no cropping */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: box-shadow 220ms ease;
+}
+
+@media (max-width: 768px) {
+  .roomImages {
+    grid-template-columns: 1fr;
+  }
+  .roomImg {
+    height: 200px;
+  }
+}

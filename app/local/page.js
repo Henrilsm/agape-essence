@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function LocalPage() {
   return (
@@ -24,6 +25,38 @@ export default function LocalPage() {
         </p>
         <p>Agende já a sua próxima avaliação estética.</p>
       </div>
+
+      {/* Nossa Estrutura: sessão com fotos das salas */}
+      <section className={styles.structureSection}>
+        <h2 className={styles.title}>Nossa Estrutura</h2>
+        <p className={styles.sectionText}>
+          Conheça nosso espaço dedicado ao seu bem-estar e beleza, com ambiente
+          acolhedor e equipamentos de última geração.
+        </p>
+
+        <div className={styles.roomsGrid}>
+          <div className={styles.room}>
+            <div className={styles.roomImages}>
+              <Image src="/Foto-Estetica-Vista1.png" alt="Sala Estética 1" width={800} height={500} className={styles.roomImg} />
+              <Image src="/Foto-Estetica-Vista2.png" alt="Sala Estética 2" width={800} height={500} className={styles.roomImg} />
+            </div>
+          </div>
+
+          <div className={styles.room}>
+            <div className={styles.roomImages}>
+              <Image src="/Foto-Odonto-Interna1.png" alt="Sala Odonto interna 1" width={800} height={500} className={styles.roomImg} />
+              <Image src="/Foto-Odonto-Interna2.png" alt="Sala Odonto interna 2" width={800} height={500} className={styles.roomImg} />
+            </div>
+          </div>
+
+          <div className={styles.room}>
+            <div className={styles.roomImages}>
+              <Image src="/Foto-Odonto-Vista1.png" alt="Sala Odonto vista 1" width={800} height={500} className={styles.roomImg} />
+              <Image src="/Foto-Odonto-Vista2.png" alt="Sala Odonto vista 2" width={800} height={500} className={styles.roomImg} />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
