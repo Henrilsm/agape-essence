@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { FaSearch } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Header({ onSearchClick }) {
   return (
@@ -9,8 +10,14 @@ export default function Header({ onSearchClick }) {
       <div className={styles.container}>
         {/* LOGO EM TEXTO ESTILIZADO */}
         <Link href="/" className={styles.logoLink}>
-          <h1 className={styles.logoTitle}>ÁGAPE ESSENCE</h1>
-          <span className={styles.logoSubtitle}>HARMONIZAÇÃO OROFACIAL</span>
+          <Image
+            src="/logo-sem-fundo.png"
+            alt="Ágape Essence Logo"
+            width={200}
+            height={80}
+            priority
+            className={styles.logoImage}
+          />
         </Link>
 
         <nav className={styles.nav}>

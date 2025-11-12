@@ -27,7 +27,7 @@ export default function HomePage() {
         <div className={styles.rightImagePanel}>
           <Image
             src="/logo-com-fundo.png" // Certifique-se que esta imagem está na pasta 'public/'
-            alt="Fundadoras da Ágape Essence"
+            alt="Logo da Ágape Essence"
             width={500}
             height={500}
             className={styles.heroImage}

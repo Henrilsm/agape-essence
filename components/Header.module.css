@@ -21,22 +21,10 @@
   align-items: flex-start; /* Alinha o texto à esquerda */
 }
 
-.logoTitle {
-  font-family: 'Playfair Display', serif; /* A FONTE ELEGANTE */
-  font-size: 1.5rem; /* 24px */
-  color: var(--primary-color); /* Dourado */
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
-}
-
-.logoSubtitle {
-  font-family: 'Montserrat', sans-serif; /* Fonte do corpo */
-  font-size: 0.7rem; /* 11.2px */
-  color: var(--text-color); /* Texto escuro */
-  letter-spacing: 0.5px;
-  margin-top: -2px; /* Ajuste fino */
-  display: block;
+.logoImage {
+  height: auto;
+  width: auto;
+  max-width: 200px;
 }
 /* --- FIM DOS ESTILOS DO LOGO --- */
 
