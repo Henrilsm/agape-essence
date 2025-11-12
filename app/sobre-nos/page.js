@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FaChevronLeft } from "react-icons/fa";
 import styles from "./page.module.css";
 
 // Nós removemos a importação da imagem e passamos a usar o 'src' direto
@@ -7,6 +9,9 @@ import styles from "./page.module.css";
 export default function SobreNosPage() {
   return (
     <div className={styles.container}>
+      <Link href="/" className={styles.backLink}>
+        <FaChevronLeft /> Voltar ao início
+      </Link>
       <section className={styles.section}>
         <div className={styles.imageContainer}>
           <Image
