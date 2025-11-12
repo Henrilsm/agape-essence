@@ -14,8 +14,8 @@ export default function Header({ onSearchClick }) {
             <Image
               src="/logo-sem-fundo.png"
               alt="Ágape Essence Logo"
-              width={200}
-              height={80}
+              width={160}
+              height={50}
               priority
               className={styles.logoImage}
             />
