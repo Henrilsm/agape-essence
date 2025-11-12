@@ -1,10 +1,19 @@
 // components/Header.js
+"use client";
+
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Header({ onSearchClick }) {
+  const pathname = usePathname();
+  const isActive = (path) => {
+    if (!pathname) return false;
+    if (path === "/") return pathname === "/";
+    return pathname === path || pathname.startsWith(path + "/") || pathname.startsWith(path);
+  };
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -23,13 +32,22 @@ export default function Header({ onSearchClick }) {
         </Link>
 
         <nav className={styles.nav}>
-          <Link href="/" className={styles.navLink}>
+          <Link
+            href="/"
+            className={`${styles.navLink} ${isActive("/") ? styles.active : ""}`}
+          >
             Início
           </Link>
-          <Link href="/servicos" className={styles.navLink}>
+          <Link
+            href="/servicos"
+            className={`${styles.navLink} ${isActive("/servicos") ? styles.active : ""}`}
+          >
             Serviços
           </Link>
-          <Link href="/local" className={styles.navLink}>
+          <Link
+            href="/local"
+            className={`${styles.navLink} ${isActive("/local") ? styles.active : ""}`}
+          >
             Local
           </Link>
         </nav>

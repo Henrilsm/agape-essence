@@ -44,6 +44,7 @@
 .nav {
   display: flex;
   gap: 1.5rem;
+  margin-left: auto; /* empurra o nav para a direita, antes do botão de pesquisa */
 }
 
 .navLink {
@@ -70,6 +71,11 @@
   width: 100%;
 }
 
+/* active state: underline stays visible when route is active */
+.navLink.active::after {
+  width: 100%;
+}
+
 /* BOTÃO DE BUSCA ATUALIZADO */
 .searchButton {
   background-color: transparent;
@@ -78,6 +84,7 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid var(--primary-color);
+  margin-left: 1.5rem; /* mantém mesma distância que o gap entre os links */
   cursor: pointer;
   display: flex;
   align-items: center;
