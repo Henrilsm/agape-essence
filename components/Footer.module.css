@@ -4,6 +4,10 @@
   padding: 3rem 1.5rem;
   width: 100%;
   border-top: 2px solid var(--primary-color);
+  /* Adjustable offset for footer address block. Change this value to move
+     the address further from the right edge (e.g. 2rem, 3rem, etc.) */
+  --address-offset: 2.3rem;
+  position: relative; /* allow absolutely positioned children (copyright) */
 }
 
 .container {
@@ -58,5 +62,22 @@
 
   .address {
     text-align: right;
+    margin-left: auto; /* force it to the right within the flex row */
+    /* use a relative left offset so the block is visually pushed right
+       (padding-right previously added inner space which made the text
+       appear shifted left). Change --address-offset to move it. */
+    position: relative;
+    left: var(--address-offset);
+  }
+
+  /* center the copyright horizontally relative to the footer edges
+     on larger screens by taking it out of the normal flow and centering
+     it using transform. This keeps social/address at the sides. */
+  .copyright {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
   }
 }
