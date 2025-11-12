@@ -8,16 +8,18 @@ export default function Header({ onSearchClick }) {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* LOGO EM TEXTO ESTILIZADO */}
+        {/* LOGO COM ZOOM PARA CORTAR BORDAS */}
         <Link href="/" className={styles.logoLink}>
-          <Image
-            src="/logo-sem-fundo.png"
-            alt="Ágape Essence Logo"
-            width={200}
-            height={80}
-            priority
-            className={styles.logoImage}
-          />
+          <div className={styles.logoContainer}>
+            <Image
+              src="/logo-sem-fundo.png"
+              alt="Ágape Essence Logo"
+              width={200}
+              height={80}
+              priority
+              className={styles.logoImage}
+            />
+          </div>
         </Link>
 
         <nav className={styles.nav}>

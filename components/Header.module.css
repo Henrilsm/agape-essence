@@ -3,7 +3,7 @@
 .header {
   background-color: var(--white-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 1rem 1.5rem; /* Aumentamos o padding para o logo respirar */
+  padding: 0.5rem 1.0rem; /* Aumentamos o padding para o logo respirar */
 }
 
 .container {
@@ -14,17 +14,34 @@
   align-items: center;
 }
 
-/* --- NOVOS ESTILOS DO LOGO EM TEXTO --- */
+/* --- NOVOS ESTILOS DO LOGO COM ZOOM/CROP --- */
 .logoLink {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alinha o texto à esquerda */
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
+}
+
+.logoContainer {
+  width: 250px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .logoImage {
-  height: auto;
-  width: auto;
-  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  object-position: 50% 51%;
 }
 /* --- FIM DOS ESTILOS DO LOGO --- */
 
