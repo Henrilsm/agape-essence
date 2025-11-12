@@ -23,11 +23,11 @@
 
 
 .title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
+  font-family: 'Playfair Display', serif; /* Fonte Elegante */
+  font-size: 2.5rem; /* Um pouco maior */
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 3rem;
 }
 
 .mapWrapper {

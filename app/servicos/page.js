@@ -81,10 +81,10 @@ export default function ServicosPage() {
   return (
     <div className={styles.backgroundWrapper}>
       <div className={styles.container}>
-        <h1 className={styles.mainTitle}>Serviços</h1>
-        <h2 className={styles.subtitle}>
+        <h1 className={styles.maintitle}>
           Procedimentos mais procurados na Ágape
-        </h2>
+        </h1>
+
 
         <div className={styles.carouselContainer}>
           {showLeftArrow && (

@@ -31,19 +31,11 @@
 }
 
 /* --- TÍTULOS --- */
-.mainTitle {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--primary-color); /* Dourado */
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
+.maintitle {
   font-family: 'Playfair Display', serif; /* Fonte Elegante */
   font-size: 2.5rem; /* Um pouco maior */
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--text-color) !important; /* sobrescreve cor dourada global */
   margin-bottom: 3rem;
 }
 
