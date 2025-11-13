@@ -37,6 +37,13 @@ export default function LocalPage() {
         <div className={styles.roomsGrid}>
           <div className={styles.room}>
             <div className={styles.roomImages}>
+              <Image src="/Recepcao1.jpg" alt="Recepção 1" width={800} height={500} className={styles.roomImg} />
+              <Image src="/Recepcao2.jpg" alt="Recepção 2" width={800} height={500} className={styles.roomImg} />
+            </div>
+          </div>
+
+          <div className={styles.room}>
+            <div className={styles.roomImages}>
               <Image src="/Foto-Estetica-Vista1.png" alt="Sala Estética 1" width={800} height={500} className={styles.roomImg} />
               <Image src="/Foto-Estetica-Vista2.png" alt="Sala Estética 2" width={800} height={500} className={styles.roomImg} />
             </div>

@@ -96,7 +96,8 @@
 
 .roomImg {
   width: 100%;
-  height: auto; /* preserve natural aspect ratio, no cropping */
+  height: 300px; /* fixed height to standardize all images */
+  object-fit: cover; /* crop/scale to fill the area maintaining aspect ratio */
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
   transition: box-shadow 220ms ease;
