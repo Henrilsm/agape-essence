@@ -12,6 +12,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="pt-br">
+      <head>
+        <meta name="color-scheme" content="light only" />
+      </head>
       <body>
         <div
           style={{

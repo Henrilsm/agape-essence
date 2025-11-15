@@ -23,6 +23,8 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   height: 100%;
+  /* Força o site a sempre usar o tema claro, ignorando a preferência do dispositivo */
+  color-scheme: light only;
 }
 
 body {
