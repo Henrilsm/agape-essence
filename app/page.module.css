@@ -231,6 +231,7 @@
   border: 2px solid rgba(255, 255, 255, 0.5);
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .indicator:hover {
@@ -238,8 +239,53 @@
 }
 
 .indicatorActive {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Mobile específico para indicadores */
+@media (max-width: 768px) {
+  .carouselIndicators {
+    bottom: 1.5rem;
+    z-index: 1001 !important;
+    pointer-events: auto !important;
+    display: flex !important;
+  }
+  
+  .indicator {
+    width: 14px !important;
+    height: 14px !important;
+    border: 2px solid rgba(255, 255, 255, 0.6) !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+    /* Força interatividade no mobile */
+    touch-action: manipulation;
+    cursor: pointer;
+    border-radius: 50% !important;
+  }
+  
+  .indicator:hover,
+  .indicator:active,
+  .indicator:focus {
+    border-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  /* Específico para indicador ativo no mobile - múltiplas regras */
+  .indicator.indicatorActive,
+  .indicatorActive {
+    background-color: #A5845A !important;
+    background: #A5845A !important;
+    border-color: #A5845A !important;
+    border: 2px solid #A5845A !important;
+    opacity: 1 !important;
+  }
+  
+  /* Regra adicional com cor específica */
+  .carouselIndicators .indicatorActive {
+    background-color: #A5845A !important;
+    background: #A5845A !important;
+    border-color: #A5845A !important;
+  }
 }
 
 /* Problems list styling for slide 2 - Right column 2x2 grid */
