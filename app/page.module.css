@@ -461,6 +461,11 @@
   .problemCard {
     padding: 1.6rem;
     border-radius: 14px;
+    background: rgba(255, 255, 255, 0.65);
+  }
+  
+  .problemCard:hover {
+    background: rgba(255, 255, 255, 0.85);
   }
   
   .problemName {
@@ -474,6 +479,11 @@
   .advantageCard {
     padding: 1rem 0.8rem;
     border-radius: 14px;
+    background: rgba(255, 255, 255, 0.65);
+  }
+  
+  .advantageCard:hover {
+    background: rgba(255, 255, 255, 0.85);
   }
   
   .advantageName {

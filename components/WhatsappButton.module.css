@@ -3,8 +3,9 @@
   bottom: clamp(1rem, 4vw, 2rem);
   right: clamp(1rem, 4vw, 2rem);
 
-  background-color: #25D366;
-  color: white;
+  background-color: #25D366 !important;
+  background: #25D366 !important;
+  color: white !important;
 
   width: clamp(50px, 12vw, 60px);
   height: clamp(50px, 12vw, 60px);
@@ -18,6 +19,9 @@
   z-index: 1000;
 
   transition: transform 0.2s ease;
+  
+  /* Força opacidade total - sem transparência */
+  opacity: 1 !important;
 }
 
 .whatsappButton > svg {
@@ -35,10 +39,18 @@
     right: 1rem;
     width: 50px;
     height: 50px;
+    background-color: #25D366 !important;
+    background: #25D366 !important;
+    color: white !important;
+    opacity: 1 !important;
+    /* Remove qualquer filtro ou transparência */
+    filter: none !important;
+    backdrop-filter: none !important;
   }
   
   .whatsappButton > svg {
     font-size: 1.8rem;
+    color: white !important;
   }
 }
 
@@ -49,10 +61,34 @@
     right: 1.5rem;
     width: 55px;
     height: 55px;
+    background-color: #25D366 !important;
+    background: #25D366 !important;
+    color: white !important;
+    opacity: 1 !important;
+    /* Remove qualquer filtro ou transparência */
+    filter: none !important;
+    backdrop-filter: none !important;
   }
   
   .whatsappButton > svg {
     font-size: 2rem;
+    color: white !important;
+  }
+}
+
+/* Regra específica para navegadores móveis problemáticos */
+@media screen and (max-width: 768px) {
+  .whatsappButton {
+    background-color: #25D366 !important;
+    background: #25D366 !important;
+    color: white !important;
+    opacity: 1 !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+  
+  .whatsappButton > svg {
+    color: white !important;
   }
 }
 
