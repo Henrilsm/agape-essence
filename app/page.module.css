@@ -359,6 +359,9 @@
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 1rem;
+    /* Força a exibição completa da imagem horizontal no mobile */
+    background-size: contain;
+    background-position: center;
   }
   
   .heroContainer {
