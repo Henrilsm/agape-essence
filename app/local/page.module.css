@@ -1,43 +1,42 @@
 .container {
   background-color: var(--background-color);
-  padding: 3rem 1rem;
+  padding: clamp(2rem, 5vw, 3rem) clamp(0.5rem, 3vw, 1rem);
   text-align: center;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-/* Forma decorativa no fundo */
+/* Forma decorativa no fundo responsiva */
 .container::after {
   content: '';
   position: absolute;
-  bottom: -150px;
-  right: -150px;
-  width: 400px;
-  height: 400px;
+  bottom: clamp(-100px, -20vw, -150px);
+  right: clamp(-100px, -20vw, -150px);
+  width: clamp(250px, 50vw, 400px);
+  height: clamp(250px, 50vw, 400px);
   background-color: var(--primary-color);
   opacity: 0.3;
   border-radius: 50%;
   z-index: 0;
-  filter: blur(50px);
+  filter: blur(clamp(30px, 8vw, 50px));
 }
 
-
 .title {
-  font-family: 'Playfair Display', serif; /* Fonte Elegante */
-  font-size: 2.5rem; /* Um pouco maior */
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 500;
   color: var(--text-color);
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
 .mapWrapper {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: clamp(0.3rem, 1vw, 0.5rem);
   background-color: var(--white-color);
-  border-radius: 12px;
+  border-radius: clamp(8px, 2vw, 12px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden; 
+  overflow: hidden;
   position: relative;
   z-index: 1;
 }
@@ -45,30 +44,30 @@
 .mapWrapper > div > iframe {
   display: block;
   width: 100%;
-  height: 450px;
+  height: clamp(300px, 60vw, 450px);
   border: none;
-  border-radius: 8px;
+  border-radius: clamp(6px, 1.5vw, 8px);
 }
 
 .textContainer {
   max-width: 600px;
-  margin: 2rem auto 0 auto;
-  font-size: 1.25rem;
+  margin: clamp(1.5rem, 4vw, 2rem) auto 0 auto;
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
   line-height: 1.6;
   position: relative;
   z-index: 1;
-  margin-bottom: 5rem;
+  margin-bottom: clamp(3rem, 8vw, 5rem);
 }
 
 /* Nossa Estrutura gallery styles */
 .structureSection {
-  padding: 2rem 0 3rem 0;
+  padding: clamp(1.5rem, 4vw, 2rem) 0 clamp(2rem, 5vw, 3rem) 0;
 }
 
 .sectionText {
   max-width: 600px;
-  margin: 0 auto 2.5rem auto;
-  font-size: 1.25rem;
+  margin: 0 auto clamp(1.5rem, 4vw, 2.5rem) auto;
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
   line-height: 1.6;
   position: relative;
   z-index: 1;
@@ -77,10 +76,10 @@
 .roomsGrid {
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
+  gap: clamp(1.5rem, 4vw, 2.25rem);
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 clamp(0.5rem, 3vw, 1rem);
 }
 
 .room {
@@ -89,25 +88,101 @@
 
 .roomImages {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: clamp(0.75rem, 2vw, 1rem);
   align-items: stretch;
 }
 
 .roomImg {
   width: 100%;
-  height: 300px; /* fixed height to standardize all images */
-  object-fit: cover; /* crop/scale to fill the area maintaining aspect ratio */
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  height: clamp(200px, 40vw, 300px);
+  object-fit: cover;
+  border-radius: clamp(8px, 2vw, 10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   transition: box-shadow 220ms ease;
 }
 
-@media (max-width: 768px) {
-  .roomImages {
-    grid-template-columns: 1fr;
+.roomImg:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile First - até 480px */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0.5rem;
   }
+  
+  .mapWrapper {
+    padding: 0.25rem;
+  }
+  
+  .mapWrapper > div > iframe {
+    height: 250px;
+  }
+  
   .roomImg {
-    height: 200px;
+    height: 180px;
+  }
+}
+
+/* Tablet - 481px a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .roomImages {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .roomImg {
+    height: 220px;
+  }
+  
+  .mapWrapper > div > iframe {
+    height: 350px;
+  }
+}
+
+/* Desktop pequeno - 769px a 1024px */
+@media (min-width: 769px) {
+  .roomImages {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .roomImg {
+    height: 280px;
+  }
+  
+  .mapWrapper > div > iframe {
+    height: 400px;
+  }
+}
+
+/* Desktop grande - 1025px+ */
+@media (min-width: 1025px) {
+  .container {
+    padding: 3rem 1rem;
+  }
+  
+  .roomImages {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .roomImg {
+    height: 300px;
+  }
+  
+  .mapWrapper > div > iframe {
+    height: 450px;
+  }
+  
+  .roomsGrid {
+    gap: 2.25rem;
+    padding: 0 1rem;
+  }
+  
+  .structureSection {
+    padding: 2rem 0 3rem 0;
+  }
+  
+  .textContainer {
+    margin-bottom: 5rem;
   }
 }

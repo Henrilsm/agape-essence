@@ -1,13 +1,11 @@
 .footer {
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: 3rem 1.5rem;
+  padding: 2rem 1rem;
   width: 100%;
   border-top: 2px solid var(--primary-color);
-  /* Adjustable offset for footer address block. Change this value to move
-     the address further from the right edge (e.g. 2rem, 3rem, etc.) */
   --address-offset: 2.3rem;
-  position: relative; /* allow absolutely positioned children (copyright) */
+  position: relative;
 }
 
 .container {
@@ -18,17 +16,19 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .social {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(1rem, 4vw, 1.5rem);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .socialLink {
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -38,46 +38,98 @@
 }
 
 .copyright {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   line-height: 1.5;
   font-weight: 400;
 }
 
 .address {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   line-height: 1.5;
   font-weight: 400;
   opacity: 0.8;
 }
 
-@media (min-width: 768px) {
+/* Mobile First - até 480px */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .container {
+    gap: 1rem;
+  }
+  
+  .social {
+    gap: 0.8rem;
+  }
+  
+  .socialLink {
+    font-size: 1.4rem;
+  }
+  
+  .copyright,
+  .address {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tablet - 481px a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+  
+  .container {
+    gap: 1.5rem;
+  }
+}
+
+/* Desktop pequeno - 769px a 1024px */
+@media (min-width: 769px) {
+  .footer {
+    padding: 2.5rem 1.5rem;
+  }
+  
   .container {
     flex-direction: row;
     text-align: left;
+    gap: 2rem;
   }
 
   .copyright {
     text-align: center;
-  }
-
-  .address {
-    text-align: right;
-    margin-left: auto; /* force it to the right within the flex row */
-    /* use a relative left offset so the block is visually pushed right
-       (padding-right previously added inner space which made the text
-       appear shifted left). Change --address-offset to move it. */
-    position: relative;
-    left: var(--address-offset);
-  }
-
-  /* center the copyright horizontally relative to the footer edges
-     on larger screens by taking it out of the normal flow and centering
-     it using transform. This keeps social/address at the sides. */
-  .copyright {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
+  }
+
+  .address {
+    text-align: right;
+    margin-left: auto;
+    position: relative;
+    left: var(--address-offset);
+  }
+}
+
+/* Desktop grande - 1025px+ */
+@media (min-width: 1025px) {
+  .footer {
+    padding: 3rem 1.5rem;
+  }
+  
+  .social {
+    gap: 1.5rem;
+  }
+  
+  .socialLink {
+    font-size: 1.8rem;
+  }
+  
+  .copyright,
+  .address {
+    font-size: 0.9rem;
   }
 }

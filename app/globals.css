@@ -26,6 +26,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.6;
 }
 
 a {
@@ -42,4 +44,50 @@ h6 {
   font-family: 'Playfair Display', serif;
   color: var(--primary-color);
   font-weight: 500;
+}
+
+/* Responsive utilities */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Media query para texto maior em dispositivos móveis */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    font-size: 16px;
+  }
 }

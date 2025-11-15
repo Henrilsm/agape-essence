@@ -3,7 +3,7 @@
 .header {
   background-color: var(--white-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 0.3rem 1.0rem;
+  padding: 0.5rem 1rem;
 }
 
 .container {
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-/* --- NOVOS ESTILOS DO LOGO COM ZOOM/CROP --- */
+/* --- ESTILOS DO LOGO RESPONSIVOS --- */
 .logoLink {
   display: flex;
   align-items: center;
@@ -22,8 +22,8 @@
 }
 
 .logoContainer {
-  width: 140px;
-  height: 50px;
+  width: clamp(100px, 20vw, 140px);
+  height: clamp(35px, 8vw, 50px);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -39,21 +39,21 @@
 }
 /* --- FIM DOS ESTILOS DO LOGO --- */
 
-
 /* ESTILO DOS LINKS DE NAVEGAÇÃO (TEXTO) */
 .nav {
   display: flex;
-  gap: 1.5rem;
-  margin-left: auto; /* empurra o nav para a direita, antes do botão de pesquisa */
+  gap: clamp(0.5rem, 3vw, 1.5rem);
+  margin-left: auto;
 }
 
 .navLink {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   color: var(--text-color);
   font-weight: 500;
   position: relative;
   padding-bottom: 5px;
+  white-space: nowrap;
 }
 
 .navLink::after {
@@ -63,7 +63,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color); /* Dourado */
+  background-color: var(--primary-color);
   transition: width 0.3s ease;
 }
 
@@ -71,20 +71,19 @@
   width: 100%;
 }
 
-/* active state: underline stays visible when route is active */
 .navLink.active::after {
   width: 100%;
 }
 
-/* BOTÃO DE BUSCA ATUALIZADO */
+/* BOTÃO DE BUSCA RESPONSIVO */
 .searchButton {
   background-color: transparent;
   color: var(--primary-color);
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 8vw, 40px);
+  height: clamp(35px, 8vw, 40px);
   border-radius: 50%;
   border: 1px solid var(--primary-color);
-  margin-left: 1.5rem; /* mantém mesma distância que o gap entre os links */
+  margin-left: clamp(0.5rem, 3vw, 1.5rem);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -95,4 +94,61 @@
 .searchButton:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
+}
+
+/* Mobile First - até 480px */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .nav {
+    gap: 0.5rem;
+  }
+  
+  .navLink {
+    font-size: 0.75rem;
+  }
+  
+  .searchButton {
+    width: 32px;
+    height: 32px;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Tablet - 481px a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header {
+    padding: 0.4rem 0.75rem;
+  }
+  
+  .nav {
+    gap: 1rem;
+  }
+  
+  .navLink {
+    font-size: 0.85rem;
+  }
+}
+
+/* Desktop pequeno e grande - 769px+ */
+@media (min-width: 769px) {
+  .header {
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav {
+    gap: 1.5rem;
+  }
+  
+  .navLink {
+    font-size: 0.9rem;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 40px;
+    margin-left: 1.5rem;
+  }
 }
