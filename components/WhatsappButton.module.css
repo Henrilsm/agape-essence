@@ -92,6 +92,24 @@
   }
 }
 
+/* Dispositivos móveis reais */
+@media screen and (max-device-width: 768px) {
+  .whatsappButton {
+    background-color: #25D366 !important;
+    background: #25D366 !important;
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+  
+  .whatsappButton > svg {
+    color: #FFFFFF !important;
+  }
+}
+
 /* Desktop - 769px+ */
 @media (min-width: 769px) {
   .whatsappButton {

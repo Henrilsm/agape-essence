@@ -600,6 +600,65 @@
   }
 }
 
+/* Regras específicas para mobile com alta prioridade */
+@media screen and (max-device-width: 768px) {
+  /* Força aplicação em dispositivos móveis reais */
+  
+  /* Botões */
+  .hero .button,
+  .leftPanel .button {
+    background-color: #A5845A !important;
+    background: #A5845A !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+  
+  /* Cards problem */
+  .problemsList .problemCard {
+    background: rgba(255, 255, 255, 0.65) !important;
+    border: 1px solid rgba(213, 185, 125, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+  
+  .problemsList .problemCard:hover,
+  .problemsList .problemCard:active {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: #A5845A !important;
+    transform: translateY(-4px) !important;
+    -webkit-transform: translateY(-4px) !important;
+  }
+  
+  /* Cards advantage */
+  .advantagesList .advantageCard {
+    background: rgba(255, 255, 255, 0.65) !important;
+    border: 1px solid rgba(213, 185, 125, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+  
+  .advantagesList .advantageCard:hover,
+  .advantagesList .advantageCard:active {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: #A5845A !important;
+    transform: translateY(-4px) !important;
+    -webkit-transform: translateY(-4px) !important;
+  }
+  
+  /* Filtro/Overlay */
+  .hero::before {
+    background: linear-gradient(to right, 
+      #F6F6F6 0%, 
+      rgba(246, 246, 246, 0.95) 25%, 
+      rgba(246, 246, 246, 0.5) 50%, 
+      rgba(246, 246, 246, 0.3) 75%, 
+      rgba(246, 246, 246, 0.1) 100%
+    ) !important;
+  }
+}
+
 /* Content transitions */
 .leftPanel {
   animation: fadeInUp 0.8s ease-out;

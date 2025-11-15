@@ -198,7 +198,7 @@ body {
   }
 }
 
-/* Específico para WebKit/Blink (Samsung Internet, Chrome Mobile) */
+/* Mobile específico para navegadores móveis problemáticos */
 @media screen and (max-width: 768px) {
   html,
   body {
@@ -212,6 +212,16 @@ body {
   * {
     color-scheme: light only !important;
     -webkit-color-scheme: light only !important;
+  }
+  
+  /* Força recarregamento de estilos */
+  .hero,
+  .heroContainer,
+  .button,
+  .problemCard,
+  .advantageCard {
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
   }
 }
 
