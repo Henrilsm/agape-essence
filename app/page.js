@@ -67,13 +67,45 @@ const carouselData = [
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isManualMode, setIsManualMode] = useState(false);
+  const [slideDirection, setSlideDirection] = useState('next');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+
+  // Preload all background images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = carouselData.map((slide) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = slide.backgroundImage;
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        setImagesPreloaded(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setImagesPreloaded(true); // Continue anyway
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   // Auto-advance carousel - always active unless in manual mode
   useEffect(() => {
     if (isManualMode) return;
 
     const interval = setInterval(() => {
+      setSlideDirection('next');
+      setIsTransitioning(true);
       setCurrentSlide(prev => (prev + 1) % carouselData.length);
+      
+      // Reset transition after animation
+      setTimeout(() => setIsTransitioning(false), 3000);
     }, 8000);
 
     return () => clearInterval(interval);
@@ -83,10 +115,16 @@ export default function HomePage() {
   const handleSlideChange = (newSlide) => {
     if (newSlide === currentSlide) return;
     
+    // Determine direction
+    setSlideDirection(newSlide > currentSlide ? 'next' : 'prev');
+    setIsTransitioning(true);
     setCurrentSlide(newSlide);
     
     // Enter manual mode for 25 seconds
     setIsManualMode(true);
+    
+    // Reset transition after animation
+    setTimeout(() => setIsTransitioning(false), 3000);
     
     // After 25 seconds, return to auto mode
     setTimeout(() => {
@@ -97,10 +135,14 @@ export default function HomePage() {
   const currentData = carouselData[currentSlide];
 
   return (
-    <section 
-      className={styles.hero}
-      style={{ backgroundImage: `url('${currentData.backgroundImage}')` }}
-    >
+    <div className={styles.carouselWrapper}>
+      <section 
+        className={`${styles.hero} ${isTransitioning ? styles[`slide-${slideDirection}`] : ''}`}
+        style={{ 
+          backgroundImage: `url('${currentData.backgroundImage}')`,
+          opacity: imagesPreloaded ? 1 : 0
+        }}
+      >
       <div className={styles.heroContainer}>
         <div className={styles.leftPanel}>
           <h1 className={styles.title}>
@@ -146,7 +188,9 @@ export default function HomePage() {
         )}
       </div>
 
-      {/* Carousel indicators */}
+      </section>
+
+      {/* Carousel indicators - OUTSIDE the hero section */}
       <div className={styles.carouselIndicators}>
         {carouselData.map((_, index) => (
           <button
@@ -159,6 +203,6 @@ export default function HomePage() {
           />
         ))}
       </div>
-    </section>
+    </div>
   );
 }

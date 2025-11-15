@@ -1,5 +1,11 @@
 /* app/page.module.css */
 
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
 .hero {
   /* Background image is now set dynamically via JS */
   background-size: cover;
@@ -12,38 +18,47 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-image 0s, opacity 3s cubic-bezier(0.25, 0.1, 0.25, 1);
   overflow: hidden;
+  transform-style: preserve-3d;
+  contain: layout style;
+  will-change: opacity;
 }
 
 /* Directional slide transitions */
 .hero.slide-next {
-  animation: slideInFromRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInFromRight 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 .hero.slide-prev {
-  animation: slideInFromLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInFromLeft 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 @keyframes slideInFromRight {
-  from {
+  0% {
+    opacity: 0;
     transform: translateX(30px);
-    opacity: 0.8;
   }
-  to {
-    transform: translateX(0);
+  1% {
+    opacity: 0.7;
+  }
+  100% {
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes slideInFromLeft {
-  from {
+  0% {
+    opacity: 0;
     transform: translateX(-30px);
-    opacity: 0.8;
   }
-  to {
-    transform: translateX(0);
+  1% {
+    opacity: 0.7;
+  }
+  100% {
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -193,7 +208,8 @@
   transform: translateX(-50%);
   display: flex;
   gap: 0.5rem;
-  z-index: 3;
+  z-index: 100;
+  pointer-events: auto;
 }
 
 .indicator {
@@ -203,29 +219,15 @@
   border: 2px solid rgba(255, 255, 255, 0.5);
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  user-select: none;
 }
 
 .indicator:hover {
   border-color: rgba(255, 255, 255, 0.8);
-  transform: scale(1.1);
-}
-
-.indicator:active {
-  transform: scale(0.95);
 }
 
 .indicatorActive {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(213, 185, 125, 0.5);
-  transform: scale(1.1);
-}
-
-.indicatorDisabled {
-  pointer-events: none;
-  opacity: 0.6;
 }
 
 /* Problems list styling for slide 2 - Right column 2x2 grid */
@@ -388,21 +390,13 @@
 
 /* Content transitions */
 .leftPanel {
-  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.problemsList {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
-}
-
-.advantagesList {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
