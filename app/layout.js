@@ -11,11 +11,14 @@ export default function RootLayout({ children }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" data-theme="light">
       <head>
         <meta name="color-scheme" content="light only" />
+        <meta name="theme-color" content="#F6F6F6" />
+        <meta name="msapplication-navbutton-color" content="#F6F6F6" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="light-content" />
       </head>
-      <body>
+      <body data-theme="light">
         <div
           style={{
             display: "flex",

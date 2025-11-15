@@ -10,12 +10,32 @@
   --text-color: #4B3F3A;
   --text-quote-color: #6B6B6B;
   --white-color: #FFFFFF;
+  
+  /* Força modo claro em todas as situações */
+  color-scheme: light only;
+}
+
+/* Força modo claro independente da preferência do sistema */
+:root,
+:root[data-theme="dark"],
+:root[data-theme="light"] {
+  --primary-color: #A5845A !important;
+  --primary-light-color: rgba(165, 132, 90, 0.1) !important;
+  --secondary-color: #C4A6A1 !important;
+  --neutral-color: #BCA88D !important;
+  --background-color: #F6F6F6 !important;
+  --text-color: #4B3F3A !important;
+  --text-quote-color: #6B6B6B !important;
+  --white-color: #FFFFFF !important;
+  color-scheme: light only !important;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* Força todos os elementos a ignorarem modo escuro */
+  color-scheme: light only !important;
 }
 
 html,
@@ -24,7 +44,17 @@ body {
   overflow-x: hidden;
   height: 100%;
   /* Força o site a sempre usar o tema claro, ignorando a preferência do dispositivo */
-  color-scheme: light only;
+  color-scheme: light only !important;
+  background-color: #F6F6F6 !important;
+  color: #4B3F3A !important;
+}
+
+/* Sobrescreve qualquer tentativa de modo escuro */
+html[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: #F6F6F6 !important;
+  color: #4B3F3A !important;
+  color-scheme: light only !important;
 }
 
 body {
@@ -70,6 +100,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Força elementos nativos a manterem cores claras */
+input,
+textarea,
+select,
+button {
+  background-color: #FFFFFF !important;
+  color: #4B3F3A !important;
+  border-color: #BCA88D !important;
+  color-scheme: light only !important;
+}
+
+/* Força links e textos */
+a,
+p,
+span,
+div,
+section,
+article,
+header,
+footer,
+nav {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
 /* Remove outline padrão mas mantém acessibilidade */
 button,
 input,
@@ -87,6 +142,30 @@ textarea:focus,
 a:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+/* Sobrescreve completamente qualquer preferência de modo escuro */
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    background-color: #F6F6F6 !important;
+    color: #4B3F3A !important;
+    color-scheme: light only !important;
+  }
+  
+  * {
+    color-scheme: light only !important;
+  }
+  
+  input,
+  textarea,
+  select,
+  button {
+    background-color: #FFFFFF !important;
+    color: #4B3F3A !important;
+    border-color: #BCA88D !important;
+  }
 }
 
 /* Remove outline ao clicar mas mantém no teclado */
