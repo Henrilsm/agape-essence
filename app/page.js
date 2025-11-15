@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 
@@ -66,15 +66,33 @@ const carouselData = [
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isManualMode, setIsManualMode] = useState(false);
 
-  // Auto-advance carousel every 8 seconds
+  // Auto-advance carousel - always active unless in manual mode
   useEffect(() => {
+    if (isManualMode) return;
+
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % carouselData.length);
     }, 8000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isManualMode]);
+
+  // Handle manual slide change
+  const handleSlideChange = (newSlide) => {
+    if (newSlide === currentSlide) return;
+    
+    setCurrentSlide(newSlide);
+    
+    // Enter manual mode for 25 seconds
+    setIsManualMode(true);
+    
+    // After 25 seconds, return to auto mode
+    setTimeout(() => {
+      setIsManualMode(false);
+    }, 25000);
+  };
 
   const currentData = carouselData[currentSlide];
 
@@ -136,7 +154,7 @@ export default function HomePage() {
             className={`${styles.indicator} ${
               index === currentSlide ? styles.indicatorActive : ''
             }`}
-            onClick={() => setCurrentSlide(index)}
+            onClick={() => handleSlideChange(index)}
             aria-label={`Slide ${index + 1}`}
           />
         ))}

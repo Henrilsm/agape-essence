@@ -12,7 +12,39 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  transition: background-image 0.8s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Directional slide transitions */
+.hero.slide-next {
+  animation: slideInFromRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero.slide-prev {
+  animation: slideInFromLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Specific positioning for slide 3 background to move logo down */
@@ -171,7 +203,8 @@
   border: 2px solid rgba(255, 255, 255, 0.5);
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
 }
 
 .indicator:hover {
@@ -179,10 +212,20 @@
   transform: scale(1.1);
 }
 
+.indicator:active {
+  transform: scale(0.95);
+}
+
 .indicatorActive {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   box-shadow: 0 0 10px rgba(213, 185, 125, 0.5);
+  transform: scale(1.1);
+}
+
+.indicatorDisabled {
+  pointer-events: none;
+  opacity: 0.6;
 }
 
 /* Problems list styling for slide 2 - Right column 2x2 grid */
@@ -345,13 +388,21 @@
 
 /* Content transitions */
 .leftPanel {
-  animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.problemsList {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+.advantagesList {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
