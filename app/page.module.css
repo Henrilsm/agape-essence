@@ -355,66 +355,101 @@
   opacity: 0.85;
 }
 
-/* Media queries apenas para mobile - desktop mantém tamanhos originais */
+/* Media queries apenas para mobile - mantém layout proporcional ao desktop */
 @media (max-width: 768px) {
   .hero {
-    padding: 2rem 1rem;
-    /* Força a exibição completa da imagem horizontal no mobile */
-    background-size: contain;
+    /* Mantém proporções do desktop, mas ajustado para mobile */
+    padding: 1.5rem 0.8rem;
+    background-size: cover;
     background-position: center;
+    /* Ajusta altura para melhor proporção no mobile */
+    height: calc(100vh - 70px);
+    min-height: 500px;
   }
   
   .heroContainer {
-    padding-left: 1rem;
-    gap: 2rem;
+    /* Mantém estrutura do desktop, mas com espaçamentos menores */
+    padding-left: 1.5rem;
+    gap: 1.5rem;
+    max-width: 100%;
+    transform: scale(0.85);
+    transform-origin: left center;
   }
   
   .heroContainer:has(.problemsList) {
-    padding-left: 1rem;
-    gap: 2rem;
+    /* Layout de grid proporcional para mobile */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+    transform: scale(0.8);
+    transform-origin: center;
   }
   
+  .heroContainer:has(.problemsList) .leftPanel {
+    grid-column: 1;
+    margin-bottom: 1rem;
+  }
+  
+  .heroContainer:has(.problemsList) .problemsList {
+    grid-column: 1;
+  }
+  
+  /* Mantém tamanhos proporcionais do desktop */
   .title {
-    font-size: clamp(1.8rem, 5vw, 3rem);
-    text-align: center;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    text-align: left;
   }
   
   .subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
-    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
   }
   
+  .welcomeText {
+    font-size: 0.85rem;
+  }
+  
+  .button {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Mantém cards proporcionais */
   .problemCard {
-    padding: clamp(1.2rem, 4vw, 2rem);
-    border-radius: clamp(12px, 3vw, 16px);
+    padding: 1.6rem;
+    border-radius: 14px;
   }
   
   .problemName {
-    font-size: clamp(1rem, 3vw, 1.15rem);
+    font-size: 0.95rem;
   }
   
   .problemDescription {
-    font-size: clamp(0.8rem, 2.2vw, 0.95rem);
+    font-size: 0.8rem;
   }
   
   .advantageCard {
-    padding: clamp(0.8rem, 2.5vw, 1.3rem) clamp(0.5rem, 1.5vw, 1rem);
-    border-radius: clamp(12px, 3vw, 16px);
+    padding: 1rem 0.8rem;
+    border-radius: 14px;
   }
   
   .advantageName {
-    font-size: clamp(0.8rem, 2.2vw, 1.1rem);
+    font-size: 0.9rem;
     line-height: 1.2;
-    min-height: clamp(2rem, 5vw, 2.6rem);
+    min-height: auto;
   }
   
   .advantageDescription {
-    font-size: clamp(0.65rem, 1.6vw, 0.85rem);
+    font-size: 0.7rem;
     line-height: 1.3;
   }
   
   .heroContainer:has(.advantagesList) .title {
-    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-size: 2.2rem;
     white-space: normal;
   }
 }
