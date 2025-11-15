@@ -70,6 +70,11 @@ export default function HomePage() {
   const [slideDirection, setSlideDirection] = useState('next');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [imagesPreloaded, setImagesPreloaded] = useState(false);
+  
+  // Touch/Swipe states
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   // Preload all background images
   useEffect(() => {
@@ -94,6 +99,36 @@ export default function HomePage() {
 
     preloadImages();
   }, []);
+
+  // Touch handlers for swipe support
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleSlideChange(currentSlide === carouselData.length - 1 ? 0 : currentSlide + 1);
+    } else if (isRightSwipe) {
+      handleSlideChange(currentSlide === 0 ? carouselData.length - 1 : currentSlide - 1);
+    }
+    
+    setIsDragging(false);
+  };
 
   // Auto-advance carousel - always active unless in manual mode
   useEffect(() => {
@@ -142,6 +177,9 @@ export default function HomePage() {
           backgroundImage: `url('${currentData.backgroundImage}')`,
           opacity: imagesPreloaded ? 1 : 0
         }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
       <div className={styles.heroContainer}>
         <div className={styles.leftPanel}>

@@ -4,6 +4,8 @@
   position: relative;
   width: 100%;
   isolation: isolate;
+  margin: 0;
+  padding: 0;
 }
 
 .hero {
@@ -12,8 +14,10 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  padding: 2rem 1rem;
-  min-height: 70vh;
+  padding: 4rem 1.5rem;
+  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
+  max-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -23,6 +27,7 @@
   transform-style: preserve-3d;
   contain: layout style;
   will-change: opacity;
+  touch-action: pan-y;
 }
 
 /* Directional slide transitions */
@@ -95,26 +100,25 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 3rem;
   position: relative;
   z-index: 2;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 4rem;
   width: 100%;
 }
 
 /* Special layout for slide 2 with problems list */
 .heroContainer:has(.problemsList) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: stretch;
+  justify-content: stretch;
   margin: 0;
   margin-left: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 4rem;
+  padding-right: 0.5rem;
   max-width: 1400px;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .heroContainer:has(.problemsList) .leftPanel {
@@ -158,20 +162,18 @@
 }
 
 .title {
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-size: 3rem;
   line-height: 1.2;
   font-weight: 500;
   color: var(--primary-color); /* O título Dourado */
-  text-align: center;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-size: 1.15rem;
   font-weight: 300;
   line-height: 1.7;
   margin-top: 1.5rem;
   color: var(--text-color); /* O texto escuro */
-  text-align: center;
 }
 
 .welcomeText {
@@ -339,7 +341,7 @@
   margin: 0 0 0.8rem 0;
   line-height: 1.3;
   text-align: center;
-  min-height: 2.6rem; /* Force same height for all titles (2 lines worth) */
+  min-height: 2.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,117 +355,64 @@
   opacity: 0.85;
 }
 
-/* Mobile First - até 480px */
-@media (max-width: 480px) {
-  .hero {
-    padding: 1rem 0.5rem;
-    min-height: 60vh;
-  }
-  
-  .heroContainer {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    gap: 1.5rem;
-  }
-  
-  .problemsList {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .problemCard {
-    padding: 1rem;
-  }
-  
-  .advantagesList {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .advantageCard {
-    padding: 1rem;
-  }
-  
-  .carouselIndicators {
-    bottom: 1rem;
-  }
-}
-
-/* Tablet - 481px a 768px */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Media queries apenas para mobile - desktop mantém tamanhos originais */
+@media (max-width: 768px) {
   .hero {
     padding: 2rem 1rem;
-    min-height: 70vh;
-  }
-  
-  .problemsList {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  
-  .advantagesList {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-}
-
-/* Desktop pequeno - 769px a 1024px */
-@media (min-width: 769px) {
-  .hero {
-    padding: 3rem 1.5rem;
-    min-height: 80vh;
   }
   
   .heroContainer {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    gap: 2rem;
   }
   
   .heroContainer:has(.problemsList) {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
-  }
-  
-  .heroContainer:has(.problemsList) .leftPanel {
-    text-align: left;
+    padding-left: 1rem;
+    gap: 2rem;
   }
   
   .title {
-    text-align: left;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-align: center;
   }
   
   .subtitle {
-    text-align: left;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    text-align: center;
   }
   
-  .advantagesList {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Desktop grande - 1025px+ */
-@media (min-width: 1025px) {
-  .hero {
-    padding: 4rem 2rem;
-    min-height: 85vh;
+  .problemCard {
+    padding: clamp(1.2rem, 4vw, 2rem);
+    border-radius: clamp(12px, 3vw, 16px);
   }
   
-  .heroContainer {
-    padding-left: 4rem;
-    padding-right: 2rem;
+  .problemName {
+    font-size: clamp(1rem, 3vw, 1.15rem);
   }
   
-  .heroContainer:has(.problemsList) {
-    grid-template-columns: 1fr 2fr;
+  .problemDescription {
+    font-size: clamp(0.8rem, 2.2vw, 0.95rem);
   }
   
-  .advantagesList {
-    grid-template-columns: repeat(4, 1fr);
+  .advantageCard {
+    padding: clamp(0.8rem, 2.5vw, 1.3rem) clamp(0.5rem, 1.5vw, 1rem);
+    border-radius: clamp(12px, 3vw, 16px);
   }
   
-  .carouselIndicators {
-    bottom: 3rem;
+  .advantageName {
+    font-size: clamp(0.8rem, 2.2vw, 1.1rem);
+    line-height: 1.2;
+    min-height: clamp(2rem, 5vw, 2.6rem);
+  }
+  
+  .advantageDescription {
+    font-size: clamp(0.65rem, 1.6vw, 0.85rem);
+    line-height: 1.3;
+  }
+  
+  .heroContainer:has(.advantagesList) .title {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    white-space: normal;
   }
 }
 
