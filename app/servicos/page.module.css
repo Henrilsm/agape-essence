@@ -202,7 +202,6 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  opacity: 0.8;
   margin-bottom: 3rem;
 }
 
@@ -255,6 +254,7 @@
   font-weight: bold;
   cursor: pointer;
   align-self: center;
+  margin-top: 0.5rem;
 }
 
 .clearButton {
@@ -281,20 +281,24 @@
 @media (min-width: 768px) {
   .searchForm {
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+    gap: 1rem;
   }
 
   .formGroup {
     flex: 1;
+    margin-bottom: 0;
   }
 
   .searchButton {
-    align-self: flex-end;
+    align-self: center;
+    margin-top: 1.5rem;
   }
 
   .clearButton {
-    align-self: flex-end;
-    margin-left: 1rem;
+    align-self: center;
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
   }
 }
