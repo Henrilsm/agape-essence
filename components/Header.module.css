@@ -167,5 +167,16 @@
     width: clamp(35px, 8vw, 40px);
     height: clamp(35px, 8vw, 40px);
     margin-left: clamp(0.5rem, 3vw, 1.5rem);
+    /* Restaura cores originais do botão de busca no mobile */
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+  }
+  
+  .searchButton:hover,
+  .searchButton:focus,
+  .searchButton:active {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
   }
 }

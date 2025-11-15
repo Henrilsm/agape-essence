@@ -77,6 +77,17 @@
   .hero[style*="Aplicacao3.jpg"] {
     background-position: center 40%;
   }
+  
+  /* Garante que o filtro/overlay mantenha as cores corretas no mobile */
+  .hero::before {
+    background: linear-gradient(to right, 
+      var(--background-color) 0%, 
+      rgba(246, 246, 246, 0.95) 25%, 
+      rgba(246, 246, 246, 0.5) 50%, 
+      rgba(246, 246, 246, 0.3) 75%, 
+      rgba(246, 246, 246, 0.1) 100%
+    ) !important;
+  }
 }
 
 /* Modern gradient overlay from opaque white to transparent */
@@ -501,26 +512,42 @@
   .button {
     padding: 0.7rem 1.6rem;
     font-size: 0.9rem;
+    /* Restaura cores originais dos botões no mobile */
+    background-color: var(--primary-color) !important;
+    background: var(--primary-color) !important;
+    color: var(--white-color) !important;
+    border: none !important;
   }
   
-  /* Cards dos slides 2 e 3 - iguais ao desktop */
+  .button:hover,
+  .button:focus,
+  .button:active {
+    background-color: var(--primary-color) !important;
+    background: var(--primary-color) !important;
+    opacity: 0.9 !important;
+    transform: scale(1.05) !important;
+  }
+  
+  /* Cards dos slides 2 e 3 - exatamente iguais ao desktop */
   .problemCard {
     padding: 1.6rem;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(213, 185, 125, 0.3);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.65) !important;
+    border: 1px solid rgba(213, 185, 125, 0.3) !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12) !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(8px) !important;
+    text-align: left !important;
   }
   
   .problemCard:hover,
   .problemCard:focus,
   .problemCard:active {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-    background: rgba(255, 255, 255, 0.85);
-    border-color: var(--primary-color);
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
   }
   
   .problemName {
@@ -534,24 +561,26 @@
   .advantageCard {
     padding: 1rem 0.8rem;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(213, 185, 125, 0.2);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(8px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    background: rgba(255, 255, 255, 0.65) !important;
+    border: 1px solid rgba(213, 185, 125, 0.2) !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(8px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   
   .advantageCard:hover,
   .advantageCard:focus,
   .advantageCard:active {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-    background: rgba(255, 255, 255, 0.85);
-    border-color: var(--primary-color);
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
   }
   
   .advantageName {
