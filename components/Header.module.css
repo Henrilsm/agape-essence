@@ -167,37 +167,6 @@
     width: clamp(35px, 8vw, 40px);
     height: clamp(35px, 8vw, 40px);
     margin-left: clamp(0.5rem, 3vw, 1.5rem);
-    /* Restaura cores originais do botão de busca no mobile */
-    background-color: transparent !important;
-    background: transparent !important;
-    color: #A5845A !important;
-    border: 1px solid #A5845A !important;
-  }
-  
-  .searchButton:hover,
-  .searchButton:focus,
-  .searchButton:active {
-    background-color: #A5845A !important;
-    background: #A5845A !important;
-    color: #FFFFFF !important;
-  }
-}
-
-/* Regras específicas para tablets e dispositivos problemáticos */
-@media (min-width: 481px) and (max-width: 1024px) {
-  .searchButton {
-    background-color: transparent !important;
-    background: transparent !important;
-    color: #A5845A !important;
-    border: 1px solid #A5845A !important;
-  }
-  
-  .searchButton:hover,
-  .searchButton:focus,
-  .searchButton:active {
-    background-color: #A5845A !important;
-    background: #A5845A !important;
-    color: #FFFFFF !important;
   }
 }
 
