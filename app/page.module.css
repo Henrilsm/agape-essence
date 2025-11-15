@@ -67,9 +67,16 @@
   }
 }
 
-/* Specific positioning for slide 3 background to move logo down */
+/* Responsive positioning for slide 3 background to avoid title conflict */
 .hero[style*="Aplicacao3.jpg"] {
-  background-position: center 30%;
+  background-position: center clamp(25%, 30%, 35%);
+}
+
+/* Mobile positioning for slide 3 - move logo further down */
+@media (max-width: 768px) {
+  .hero[style*="Aplicacao3.jpg"] {
+    background-position: center 40%;
+  }
 }
 
 /* Modern gradient overlay from opaque white to transparent */
@@ -396,7 +403,39 @@
     grid-column: 1;
   }
   
-  /* Mantém tamanhos proporcionais do desktop */
+  /* Layout especial para o slide 3 (vantagens) - totalmente centralizado */
+  .heroContainer:has(.advantagesList) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: scale(0.9);
+    transform-origin: center;
+    padding: 1rem;
+  }
+  
+  .heroContainer:has(.advantagesList) .leftPanel {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .heroContainer:has(.advantagesList) .title {
+    font-size: 2rem;
+    white-space: normal;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .advantagesList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  /* Mantém tamanhos proporcionais do desktop para outros slides */
   .title {
     font-size: 2.4rem;
     line-height: 1.2;
