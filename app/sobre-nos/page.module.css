@@ -83,7 +83,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: clamp(0.9rem, 2vw, 1rem);
-    color: #333;
+    color: var(--text-color);
 }
 
 /* --- Seção 2: Filosofia --- */
@@ -121,7 +121,7 @@
 .verse {
     font-size: clamp(1.3rem, 3.5vw, 1.75rem);
     font-style: italic;
-    color: #555;
+    color: var(--text-quote-color);
     margin-bottom: 0.5rem;
 }
 

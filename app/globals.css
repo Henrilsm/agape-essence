@@ -2,11 +2,13 @@
 
 :root {
   --primary-color: #A5845A;
+  --primary-light-color: rgba(165, 132, 90, 0.1);
   --secondary-color: #C4A6A1;
   --neutral-color: #BCA88D;
 
   --background-color: #F6F6F6;
   --text-color: #4B3F3A;
+  --text-quote-color: #6B6B6B;
   --white-color: #FFFFFF;
 }
 
@@ -24,8 +26,8 @@ body {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
   font-size: clamp(14px, 2vw, 16px);
   line-height: 1.6;
 }
@@ -63,17 +65,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus styles for accessibility */
-button:focus,
+/* Remove outline padrão mas mantém acessibilidade */
+button,
+input,
+select,
+textarea,
+a {
+  outline: none;
+}
+
+/* Focus styles personalizados para acessibilidade */
+button:focus-visible,
 input:focus,
 select:focus,
 textarea:focus,
-a:focus {
+a:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
-/* Media query para texto maior em dispositivos móveis */
+/* Remove outline ao clicar mas mantém no teclado */
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Media query para diferentes tamanhos de dispositivos */
 @media (max-width: 480px) {
   body {
     font-size: 14px;

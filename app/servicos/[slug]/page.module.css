@@ -2,8 +2,8 @@
 
 .container {
     max-width: 1100px;
-    margin: 2rem auto;
-    padding: 1rem;
+    margin: clamp(1rem, 3vw, 2rem) auto;
+    padding: clamp(0.5rem, 3vw, 1rem);
 }
 
 /* --- Botão de Voltar --- */
@@ -11,11 +11,11 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
 .backLink:hover {
@@ -26,38 +26,40 @@
 .header {
     display: flex;
     flex-direction: column-reverse;
-    /* Imagem primeiro em telas pequenas */
-    gap: 2rem;
+    gap: clamp(1.5rem, 4vw, 2rem);
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+    text-align: center;
 }
 
 .headerText {
     flex: 1;
+    width: 100%;
 }
 
 .title {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 6vw, 2.8rem);
     font-weight: bold;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .description {
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
     line-height: 1.7;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
 }
 
 .headerImageContainer {
     flex: 1;
     width: 100%;
+    max-width: 500px;
 }
 
 .headerImage {
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: clamp(8px, 2vw, 12px);
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -68,12 +70,11 @@
     align-items: center;
     gap: 0.75rem;
     background-color: #25D366;
-    /* Verde WhatsApp */
     color: white;
-    padding: 1rem 2rem;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
     border-radius: 9999px;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     font-weight: bold;
     transition: transform 0.2s ease;
 }
@@ -82,34 +83,32 @@
     transform: scale(1.05);
 }
 
-.ctaButton>svg {
-    font-size: 1.4rem;
+.ctaButton > svg {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
 }
-
 
 /* --- Grid de Detalhes (Benefícios, etc.) --- */
 .detailsGrid {
     display: grid;
-    gap: 1.5rem;
-    /* Cria 1, 2 ou 3 colunas dependendo do espaço */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1rem, 3vw, 1.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .detailCard {
     background-color: var(--primary-light-color);
-    padding: 2rem;
-    border-radius: 12px;
+    padding: clamp(1.5rem, 4vw, 2rem);
+    border-radius: clamp(8px, 2vw, 12px);
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 3.5vw, 1.5rem);
     font-weight: bold;
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .detailCard p {
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 2.5vw, 1rem);
     line-height: 1.6;
 }
 
@@ -119,11 +118,11 @@
 }
 
 .list li {
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 2.5vw, 1rem);
     line-height: 1.6;
-    padding-left: 1.75rem;
+    padding-left: clamp(1.5rem, 3vw, 1.75rem);
     position: relative;
-    margin-bottom: 0.75rem;
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
 }
 
 /* Adiciona um "check" customizado */
@@ -135,12 +134,80 @@
     top: 0;
 }
 
+/* Mobile First - até 480px */
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+    
+    .header {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .headerImageContainer {
+        max-width: 100%;
+    }
+    
+    .detailsGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .detailCard {
+        padding: 1.5rem;
+    }
+}
 
-/* --- Media Query para telas maiores --- */
-@media (min-width: 768px) {
+/* Tablet - 481px a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .header {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .headerImageContainer {
+        max-width: 400px;
+    }
+    
+    .detailsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Desktop pequeno - 769px a 1024px */
+@media (min-width: 769px) {
     .header {
         flex-direction: row;
-        /* Texto e imagem lado a lado */
+        gap: 2rem;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .headerImageContainer {
+        max-width: none;
+    }
+    
+    .detailsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* Desktop grande - 1025px+ */
+@media (min-width: 1025px) {
+    .container {
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+    
+    .header {
         gap: 3rem;
+        margin-bottom: 4rem;
+    }
+    
+    .detailCard {
+        padding: 2rem;
     }
 }
