@@ -46,6 +46,29 @@
   font-weight: 500;
 }
 
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+}
+
+.searchLogo {
+  border-radius: 8px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  transform: scale(1.5);
+  object-fit: cover;
+}
+
+.searchLogo:hover {
+  opacity: 1;
+}
+
 .resultsContainer {
   overflow-y: auto;
 }

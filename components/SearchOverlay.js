@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import styles from "./SearchOverlay.module.css";
 import { allServicos } from "../app/servicos/servicosData";
@@ -61,6 +62,15 @@ export default function SearchOverlay({ isOpen, onClose }) {
             onChange={(e) => setSearchTerm(e.target.value)}
             autoFocus
           />
+          <div className={styles.logoContainer}>
+            <Image
+              src="/LogoPesquisa.png"
+              alt="Ágape Essence Logo"
+              width={40}
+              height={40}
+              className={styles.searchLogo}
+            />
+          </div>
         </div>
         <div className={styles.resultsContainer}>
           {results.length > 0 && (
