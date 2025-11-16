@@ -34,8 +34,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* Força todos os elementos a ignorarem modo escuro */
-  color-scheme: light only !important;
 }
 
 html,
@@ -144,7 +142,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Sobrescreve completamente qualquer preferência de modo escuro */
+/* Configurações básicas para modo claro */
 @media (prefers-color-scheme: dark) {
   :root,
   html,
@@ -153,77 +151,9 @@ a:focus-visible {
     color: #4B3F3A !important;
     color-scheme: light only !important;
   }
-  
-  * {
-    color-scheme: light only !important;
-  }
-  
-  input,
-  textarea,
-  select,
-  button {
-    background-color: #FFFFFF !important;
-    color: #4B3F3A !important;
-    border-color: #BCA88D !important;
-  }
 }
 
-/* Configurações específicas para Samsung Internet */
-html {
-  background-color: #F6F6F6 !important;
-  color: #4B3F3A !important;
-  color-scheme: light only !important;
-  /* Força no nível do documento */
-  -webkit-color-scheme: light only !important;
-  -moz-color-scheme: light only !important;
-}
 
-body {
-  background: #F6F6F6 !important;
-  background-color: #F6F6F6 !important;
-  color: #4B3F3A !important;
-  color-scheme: light only !important;
-  -webkit-color-scheme: light only !important;
-  -moz-color-scheme: light only !important;
-}
-
-/* Força para navegadores móveis problemáticos */
-@supports (-webkit-appearance: none) {
-  html,
-  body {
-    background-color: #F6F6F6 !important;
-    color: #4B3F3A !important;
-    color-scheme: light only !important;
-    -webkit-color-scheme: light only !important;
-  }
-}
-
-/* Mobile específico para navegadores móveis problemáticos */
-@media screen and (max-width: 768px) {
-  html,
-  body {
-    background-color: #F6F6F6 !important;
-    color: #4B3F3A !important;
-    color-scheme: light only !important;
-    -webkit-color-scheme: light only !important;
-    -moz-color-scheme: light only !important;
-  }
-  
-  * {
-    color-scheme: light only !important;
-    -webkit-color-scheme: light only !important;
-  }
-  
-  /* Força recarregamento de estilos */
-  .hero,
-  .heroContainer,
-  .button,
-  .problemCard,
-  .advantageCard {
-    -webkit-transform: translateZ(0) !important;
-    transform: translateZ(0) !important;
-  }
-}
 
 /* Remove outline ao clicar mas mantém no teclado */
 button:focus:not(:focus-visible),

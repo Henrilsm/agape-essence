@@ -193,24 +193,27 @@
 
 .button {
   margin-top: 2rem;
-  /* O botão Dourado (ou Areia, dependendo da sua variável) */
-  background-color: var(--primary-color); 
-  color: var(--white-color);
+  background-color: var(--primary-color) !important;
+  background: var(--primary-color) !important;
+  color: var(--white-color) !important;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   padding: 0.85rem 2rem;
   border-radius: 9999px;
-  border: none;
+  border: none !important;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
   transition: all 0.2s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 1 !important;
 }
 
 .button:hover {
   transform: scale(1.05);
-  opacity: 0.9;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
+  opacity: 1 !important;
 }
 
 /* Carousel indicators */
@@ -302,21 +305,24 @@
 }
 
 .problemCard {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
   padding: 2rem;
   border-radius: 16px;
   border: 1px solid rgba(213, 185, 125, 0.3);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
   text-align: left;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .problemCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-  background: rgba(255, 255, 255, 0.85);
-  border-color: var(--primary-color);
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: var(--primary-color) !important;
 }
 
 .problemName {
@@ -367,14 +373,16 @@
 }
 
 .advantageCard {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
   padding: 1.3rem 1rem;
   border-radius: 16px;
   text-align: center;
   border: 1px solid rgba(213, 185, 125, 0.2);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -382,10 +390,11 @@
 }
 
 .advantageCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.85);
-  border-color: var(--primary-color);
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: var(--primary-color) !important;
 }
 
 .advantageName {
@@ -504,26 +513,10 @@
     font-size: 0.9rem;
   }
   
-  /* Cards dos slides 2 e 3 - exatamente iguais ao desktop */
+  /* Cards dos slides 2 e 3 - versões limpas para mobile */
   .problemCard {
     padding: 1.6rem;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.65) !important;
-    border: 1px solid rgba(213, 185, 125, 0.3) !important;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12) !important;
-    transition: all 0.3s ease !important;
-    backdrop-filter: blur(8px) !important;
-    text-align: left !important;
-  }
-  
-  .problemCard:hover,
-  .problemCard:focus,
-  .problemCard:active {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18) !important;
-    background: rgba(255, 255, 255, 0.85) !important;
-    border-color: var(--primary-color) !important;
-    border: 1px solid var(--primary-color) !important;
   }
   
   .problemName {
@@ -537,26 +530,6 @@
   .advantageCard {
     padding: 1rem 0.8rem;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.65) !important;
-    border: 1px solid rgba(213, 185, 125, 0.2) !important;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08) !important;
-    transition: all 0.3s ease !important;
-    backdrop-filter: blur(8px) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  
-  .advantageCard:hover,
-  .advantageCard:focus,
-  .advantageCard:active {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15) !important;
-    background: rgba(255, 255, 255, 0.85) !important;
-    border-color: var(--primary-color) !important;
-    border: 1px solid var(--primary-color) !important;
   }
   
   .advantageName {
@@ -576,64 +549,7 @@
   }
 }
 
-/* Regras específicas para mobile com alta prioridade */
-@media screen and (max-device-width: 768px) {
-  /* Força aplicação em dispositivos móveis reais */
-  
-  /* Botões */
-  .hero .button,
-  .leftPanel .button {
-    background-color: #A5845A !important;
-    background: #A5845A !important;
-    color: #FFFFFF !important;
-    border: none !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-  }
-  
-  /* Cards problem */
-  .problemsList .problemCard {
-    background: rgba(255, 255, 255, 0.65) !important;
-    border: 1px solid rgba(213, 185, 125, 0.3) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-  }
-  
-  .problemsList .problemCard:hover,
-  .problemsList .problemCard:active {
-    background: rgba(255, 255, 255, 0.85) !important;
-    border-color: #A5845A !important;
-    transform: translateY(-4px) !important;
-    -webkit-transform: translateY(-4px) !important;
-  }
-  
-  /* Cards advantage */
-  .advantagesList .advantageCard {
-    background: rgba(255, 255, 255, 0.65) !important;
-    border: 1px solid rgba(213, 185, 125, 0.2) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-  }
-  
-  .advantagesList .advantageCard:hover,
-  .advantagesList .advantageCard:active {
-    background: rgba(255, 255, 255, 0.85) !important;
-    border-color: #A5845A !important;
-    transform: translateY(-4px) !important;
-    -webkit-transform: translateY(-4px) !important;
-  }
-  
-  /* Filtro/Overlay */
-  .hero::before {
-    background: linear-gradient(to right, 
-      #F6F6F6 0%, 
-      rgba(246, 246, 246, 0.95) 25%, 
-      rgba(246, 246, 246, 0.5) 50%, 
-      rgba(246, 246, 246, 0.3) 75%, 
-      rgba(246, 246, 246, 0.1) 100%
-    ) !important;
-  }
-}
+
 
 /* Content transitions */
 .leftPanel {
@@ -649,4 +565,59 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Força específica para os cards funcionarem corretamente */
+.problemCard,
+.advantageCard {
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.problemCard:hover,
+.advantageCard:hover {
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* For\u00e7a m\u00e1xima para quebrar qualquer regra conflitante */
+.hero .problemCard {
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.hero .problemCard:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.hero .advantageCard {
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.hero .advantageCard:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Especificidade m\u00e1xima com containers */
+.heroContainer .problemsList .problemCard {
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.heroContainer .problemsList .problemCard:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.heroContainer .advantagesList .advantageCard {
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.heroContainer .advantagesList .advantageCard:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }

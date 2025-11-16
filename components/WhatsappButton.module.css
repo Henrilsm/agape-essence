@@ -39,18 +39,10 @@
     right: 1rem;
     width: 50px;
     height: 50px;
-    background-color: #25D366 !important;
-    background: #25D366 !important;
-    color: white !important;
-    opacity: 1 !important;
-    /* Remove qualquer filtro ou transparência */
-    filter: none !important;
-    backdrop-filter: none !important;
   }
   
   .whatsappButton > svg {
     font-size: 1.8rem;
-    color: white !important;
   }
 }
 
@@ -61,70 +53,14 @@
     right: 1.5rem;
     width: 55px;
     height: 55px;
-    background-color: #25D366 !important;
-    background: #25D366 !important;
-    color: white !important;
-    opacity: 1 !important;
-    /* Remove qualquer filtro ou transparência */
-    filter: none !important;
-    backdrop-filter: none !important;
   }
   
   .whatsappButton > svg {
     font-size: 2rem;
-    color: white !important;
   }
 }
 
-/* Regra específica para navegadores móveis problemáticos */
-@media screen and (max-width: 768px) {
-  .whatsappButton {
-    background-color: #25D366 !important;
-    background: #25D366 !important;
-    color: white !important;
-    opacity: 1 !important;
-    filter: none !important;
-    backdrop-filter: none !important;
-  }
-  
-  .whatsappButton > svg {
-    color: white !important;
-  }
-}
 
-/* Regra específica para tablets */
-@media (min-width: 481px) and (max-width: 1024px) {
-  .whatsappButton {
-    background-color: #25D366 !important;
-    background: #25D366 !important;
-    color: white !important;
-    opacity: 1 !important;
-    filter: none !important;
-    backdrop-filter: none !important;
-  }
-  
-  .whatsappButton > svg {
-    color: white !important;
-  }
-}
-
-/* Dispositivos móveis reais */
-@media screen and (max-device-width: 768px) {
-  .whatsappButton {
-    background-color: #25D366 !important;
-    background: #25D366 !important;
-    color: #FFFFFF !important;
-    opacity: 1 !important;
-    filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-  }
-  
-  .whatsappButton > svg {
-    color: #FFFFFF !important;
-  }
-}
 
 /* Desktop - 769px+ */
 @media (min-width: 769px) {
