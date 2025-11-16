@@ -11,7 +11,6 @@
 .hero {
   /* Background image is now set dynamically via JS */
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   padding: 4rem 1.5rem;
@@ -65,6 +64,12 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* Positioning for slide 1 - focus left to show logo on right */
+.hero[style*="Aplicacao1.jpg"] {
+  background-position: -90% 20% !important;
+  background-size: 120% !important;
 }
 
 /* Responsive positioning for slide 3 background to avoid title conflict */
