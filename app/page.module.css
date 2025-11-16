@@ -304,12 +304,13 @@
   height: 100%;
 }
 
-/* Mobile adjustment for problems list */
+/* Mobile adjustment for problems list - 2x2 layout igual ao slide 3 */
 @media (max-width: 768px) {
   .problemsList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
     max-width: 100%;
     width: 100%;
     height: auto;
@@ -318,16 +319,23 @@
   .problemCard {
     padding: 1.2rem 1rem;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
   }
   
   .problemName {
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
   
   .problemDescription {
     font-size: 0.85rem;
     line-height: 1.4;
+    text-align: center;
   }
 }
 
