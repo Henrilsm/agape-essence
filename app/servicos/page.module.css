@@ -307,7 +307,17 @@
 /* Mobile First - até 480px */
 @media (max-width: 480px) {
   .carouselButton {
-    display: none;
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+  
+  .left {
+    left: -8px;
+  }
+  
+  .right {
+    right: -8px;
   }
   
   .card {
