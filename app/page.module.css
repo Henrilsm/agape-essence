@@ -304,6 +304,18 @@
   height: 100%;
 }
 
+/* Mobile adjustment for problems list */
+@media (max-width: 768px) {
+  .problemsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
 .problemCard {
   background: rgba(255, 255, 255, 0.85) !important;
   background-color: rgba(255, 255, 255, 0.85) !important;
@@ -440,23 +452,25 @@
   }
   
   .heroContainer:has(.problemsList) {
-    /* Layout de grid proporcional para mobile */
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1rem;
-    transform: scale(0.8);
+    /* Layout igual ao slide 3 - centralizado e compacto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: scale(0.9);
     transform-origin: center;
+    padding: 1rem;
   }
   
   .heroContainer:has(.problemsList) .leftPanel {
-    grid-column: 1;
     margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
   }
   
   .heroContainer:has(.problemsList) .problemsList {
-    grid-column: 1;
+    width: 100%;
   }
   
   /* Layout especial para o slide 3 (vantagens) - totalmente centralizado */
