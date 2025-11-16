@@ -77,8 +77,8 @@
 /* Positioning for slide 1 - MOBILE */
 @media (max-width: 768px) {
   .hero[style*="Aplicacao1.jpg"] {
-    background-position: -90% 20% !important;
-    background-size: 120% !important;
+    background-size: cover !important;
+    background-position: -10% -90% !important;
   }
 }
 
@@ -479,10 +479,24 @@
     /* Mantém proporções do desktop, mas ajustado para mobile */
     padding: 1.5rem 0.8rem;
     background-size: cover;
-    background-position: center;
     /* Ajusta altura para melhor proporção no mobile */
     height: calc(100vh - 70px);
     min-height: 500px;
+  }
+  
+  /* Slide 1 specific positioning for mobile */
+  .hero[style*="Aplicacao1.jpg"] {
+    background-position: 22% 0% !important;
+    background-size: auto 200% !important;
+  }
+  
+  /* Slides 2 e 3 mantêm posicionamento center */
+  .hero[style*="Aplicacao2.jpg"] {
+    background-position: center !important;
+  }
+  
+  .hero[style*="Aplicacao3.jpg"] {
+    background-position: center 40% !important;
   }
   
   .heroContainer {
