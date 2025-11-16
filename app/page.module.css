@@ -100,6 +100,11 @@
   z-index: 1;
 }
 
+/* Remove white overlay for slide 3 */
+.hero[style*="Aplicacao3.jpg"]::before {
+  display: none;
+}
+
 /* Ensure content appears above the overlay */
 .heroContainer {
   position: relative;
