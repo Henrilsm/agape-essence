@@ -66,10 +66,20 @@
   }
 }
 
-/* Positioning for slide 1 - focus left to show logo on right */
-.hero[style*="Aplicacao1.jpg"] {
-  background-position: -90% 20% !important;
-  background-size: 120% !important;
+/* Positioning for slide 1 - DESKTOP */
+@media (min-width: 769px) {
+  .hero[style*="Aplicacao1.jpg"] {
+    background-position: -90% 20% !important;
+    background-size: 120% !important;
+  }
+}
+
+/* Positioning for slide 1 - MOBILE */
+@media (max-width: 768px) {
+  .hero[style*="Aplicacao1.jpg"] {
+    background-position: -90% 20% !important;
+    background-size: 120% !important;
+  }
 }
 
 /* Responsive positioning for slide 3 background to avoid title conflict */
