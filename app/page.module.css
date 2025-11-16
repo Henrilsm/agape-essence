@@ -100,9 +100,9 @@
   z-index: 1;
 }
 
-/* Remove white overlay for slide 3 */
+/* Uniform white overlay for slide 3 - completely homogeneous */
 .hero[style*="Aplicacao3.jpg"]::before {
-  display: none;
+  background: rgba(246, 246, 246, 0.574) !important;
 }
 
 /* Ensure content appears above the overlay */
