@@ -309,10 +309,25 @@
   .problemsList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.8rem;
     max-width: 100%;
     width: 100%;
     height: auto;
+  }
+  
+  .problemCard {
+    padding: 1.2rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .problemName {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .problemDescription {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
 
@@ -452,32 +467,48 @@
   }
   
   .heroContainer:has(.problemsList) {
-    /* Layout igual ao slide 3 - centralizado e compacto */
+    /* Layout centralizado e organizado para mobile */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transform: scale(0.9);
+    transform: scale(0.85);
     transform-origin: center;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+    height: calc(100vh - 140px);
+    max-width: 100%;
   }
   
   .heroContainer:has(.problemsList) .leftPanel {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     width: 100%;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  
+  .heroContainer:has(.problemsList) .subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
     text-align: center;
   }
   
   .heroContainer:has(.problemsList) .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     white-space: normal;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
   }
   
   .heroContainer:has(.problemsList) .problemsList {
     width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   /* Layout especial para o slide 3 (vantagens) - totalmente centralizado */
