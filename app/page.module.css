@@ -486,8 +486,8 @@
   
   /* Slide 1 specific positioning for mobile */
   .hero[style*="Aplicacao1.jpg"] {
-    background-position: 22% 0% !important;
-    background-size: auto 200% !important;
+    background-position: 31% 0% !important;
+    background-size: auto 208% !important;
   }
   
   /* Slides 2 e 3 mantêm posicionamento center */
@@ -513,13 +513,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     transform: scale(0.85);
     transform-origin: center;
-    padding: 0.5rem 1rem;
+    padding: 2rem 1rem 0.5rem 1rem;
     margin: 0 auto;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 100px);
     max-width: 100%;
   }
   
@@ -549,8 +549,10 @@
   .heroContainer:has(.problemsList) .problemsList {
     width: 100%;
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 1rem !important;
     justify-content: center;
   }
   
