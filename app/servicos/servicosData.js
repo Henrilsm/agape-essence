@@ -7,12 +7,12 @@ export const allServicos = [
         tags: ["rosto", "rejuvenescimento"],
         descricao: "A Toxina Botulínica, popularmente conhecida como Botox, é um procedimento minimamente invasivo que relaxa a musculatura facial, atenuando e prevenindo rugas dinâmicas e linhas de expressão.",
         beneficios: [
-            "Suaviza rugas na testa, glabela (entre as sobrancelhas) e pés de galinha.",
+            "Suaviza rugas em toda a face e pescoço, melhorando o contorno facial.",
             "Previne a formação de novas linhas de expressão.",
-            "Pode ser usado para o tratamento de sorriso gengival.",
+            "Pode ser usado para o tratamento de sorriso gengival, bruxismo e hiperidrose (suor excessivo)",
             "Resultados naturais que preservam sua identidade."
         ],
-        indicacoes: "Ideal para quem deseja tratar e prevenir os sinais do envelhecimento, buscando uma aparência mais descansada e rejuvenescida com naturalidade.",
+        indicacoes: "Ideal para quem deseja tratar e prevenir os sinais do envelhecimento, buscando uma aparência mais descansada e rejuvenescida com naturalidade. Assim como clientes que apresentam queixas clínicas.",
         cuidados: [
             "Não deitar ou abaixar a cabeça por 4 horas após o procedimento.",
             "Não massagear a área tratada.",
@@ -29,14 +29,15 @@ export const allServicos = [
         beneficios: [
             "Restaura o volume de olheiras, maçãs do rosto e bigode chinês.",
             "Define e melhora o contorno da mandíbula.",
-            "Proporciona volume e hidratação para os lábios.",
+            "Ajuste e defina o formato do nariz, corrigindo imperfeições estéticas sem a necessidade de cirurgia.",
+            "Proporciona volume, hidratação e contorno para os lábios.",
             "Resultados imediatos e naturais."
         ],
         indicacoes: "Indicado para tratar flacidez, perda de volume facial, sulcos profundos e para quem deseja lábios mais definidos e hidratados.",
         cuidados: [
             "Evitar exposição solar intensa nos primeiros dias.",
             "Não massagear a região tratada, a menos que orientado pelo profissional.",
-            "Evitar o uso de maquiagem por 24 horas."
+            "Evitar o uso de maquiagem e exercício físico por 24 horas."
         ]
     },
     {
@@ -55,7 +56,8 @@ export const allServicos = [
         indicacoes: "Perfeito para quem sente a pele mais 'fina' e flácida, com perda do contorno facial. É um dos pilares do tratamento do envelhecimento.",
         cuidados: [
             "Pode ser necessário realizar massagens no local conforme orientação.",
-            "Evitar exposição solar."
+            "Evitar exposição solar e ambientes com calor intenso.",
+            "Evitar uso de maquiagen e exercício físico por 24 horas."
         ]
     },
     {
@@ -95,7 +97,8 @@ export const allServicos = [
         cuidados: [
             "A pele ficará sensível e avermelhada por 24-48h.",
             "Evitar sol e usar protetor solar rigorosamente.",
-            "Não usar maquiagem por 24 horas."
+            "Não usar maquiagem por 24 horas.",
+            "Usar ativos hidratantes e regeneradores."
         ]
     },
     {
@@ -109,7 +112,6 @@ export const allServicos = [
             "Efeito lifting facial e de pescoço.",
             "Trata a flacidez profunda.",
             "Melhora o contorno facial e a papada.",
-            "Resultados visíveis em uma única sessão."
         ],
         indicacoes: "Para pacientes com flacidez moderada a severa que buscam um 'up' no rosto sem cirurgia plástica.",
         cuidados: [
@@ -133,7 +135,8 @@ export const allServicos = [
         indicacoes: "Para todos os tipos de pele, especialmente as ressecadas, opacas e com pequenas linhas de expressão. Excelente para revitalização.",
         cuidados: [
             "Pode formar pequenos 'inchaços' no local da aplicação que somem em 24h.",
-            "Evitar maquiagem no dia."
+            "Evitar maquiagem no dia.",
+            "Garantir hidratação regular."
         ]
     },
     {
@@ -142,12 +145,11 @@ export const allServicos = [
         slug: "fios-de-pdo",
         imagem: "/servicos/8.webp",
         tags: ["rosto", "rejuvenescimento"],
-        descricao: "Os Fios de PDO (Polidioxanona) são fios 100% absorvíveis que promovem um duplo efeito: tração (lifting imediato) e estímulo de colágeno (efeito duradouro) enquanto são absorvidos pelo organismo.",
+        descricao: "Os Fios de PDO (Polidioxanona) são fios 100% absorvíveis que promovem um duplo efeito: tração (lifting imediato) e estímulo de colágeno (efeito prolongado) enquanto são absorvidos pelo organismo.",
         beneficios: [
             "Tração e suspensão dos tecidos faciais (efeito lifting).",
             "Estimula a produção de colágeno, melhorando a firmeza.",
-            "Define o contorno do rosto e trata a papada.",
-            "Procedimento realizado em consultório."
+            "Define o contorno do rosto e trata a papada."
         ],
         indicacoes: "Para flacidez facial, perda de contorno mandibular ('buldogue') e para quem deseja um efeito lifting sem cirurgia.",
         cuidados: [

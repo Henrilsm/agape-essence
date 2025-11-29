@@ -26,13 +26,11 @@ export default function SobreNosPage() {
         <div className={styles.textContainer}>
           <h1 className={styles.title}>Mãos que cuidam, corações que creem</h1>
           <p className={styles.intro}>
-            A Ágape Essence é a união de duas jornadas, duas amigas e irmãs em
-            Cristo que decidiram dar um novo passo.
+            A Ágape Essence nasce da união de duas amigas e irmãs em Cristo que, ao convergirem suas jornadas, decidiram dar um novo passo.
           </p>
           <p>
             Depois de muitas conversas, orações e sonhos compartilhados,
-            entendemos que nossa missão ia além da estética. Hoje, somos mais
-            fortes juntas, mais guiadas e mais completas.
+            entendemos que nossa missão ia além da estética. Juntas, encontramos a força e a orientação necessárias para sermos mais completas.
           </p>
           <blockquote className={styles.quote}>
             {/* CORREÇÃO AQUI */}
@@ -68,7 +66,7 @@ export default function SobreNosPage() {
 
       <section className={styles.verseSection}>
         <p className={styles.verse}>
-          &ldquo;Vosso corpo é o corpo do Espírito Santo&rdquo;
+          &ldquo;O seu corpo é o Templo do Espírito Santo.&rdquo;
         </p>
         <span className={styles.reference}>1 Coríntios 6:19-20</span>
       </section>
