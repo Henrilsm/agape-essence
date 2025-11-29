@@ -69,7 +69,7 @@
 /* Positioning for slide 1 - DESKTOP */
 @media (min-width: 769px) {
   .hero[style*="Aplicacao1.jpg"] {
-    background-position: -90% 20% !important;
+    background-position: -30% 40% !important;
     background-size: 120% !important;
   }
 }
