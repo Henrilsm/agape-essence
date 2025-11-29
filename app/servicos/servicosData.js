@@ -4,8 +4,8 @@ export const allServicos = [
         nome: "Aplicação de Toxina Botulínica",
         slug: "toxina-botulinica",
         imagem: "/servicos/1.jpg",
-        tags: ["rosto", "rejuvenescimento"],
-        descricao: "A Toxina Botulínica, popularmente conhecida como Botox, é um procedimento minimamente invasivo que relaxa a musculatura facial, atenuando e prevenindo rugas dinâmicas e linhas de expressão.",
+        tags: ["rosto","lábios", "pescoco", "rejuvenescimento", "botox", "rugas", "linhas de expressão", "terapêutico", "hiperidrose", "bruxismo"],
+        descricao: "A Toxina Botulínica, popularmente conhecida como Botox, é um procedimento minimamente invasivo que, ao ser injetado em pontos estratégicos, relaxa a musculatura para atenuar e prevenir linhas de expressão faciais. Além disso, possui importantes aplicações terapêuticas no controle de condições médicas.",
         beneficios: [
             "Suaviza rugas em toda a face e pescoço, melhorando o contorno facial.",
             "Previne a formação de novas linhas de expressão.",
@@ -24,12 +24,12 @@ export const allServicos = [
         nome: "Preenchimentos Faciais",
         slug: "preenchimentos-faciais",
         imagem: "/servicos/2.png",
-        tags: ["rosto", "labios"],
+        tags: ["rosto", "lábios", "ácido hialurônico", "volume", "contorno", "rinomodelação", "olheiras", "bigode chinês"],
         descricao: "O preenchimento facial com Ácido Hialurônico é um procedimento que repõe o volume perdido em áreas específicas do rosto, melhora o contorno e hidrata profundamente a pele.",
         beneficios: [
             "Restaura o volume de olheiras, maçãs do rosto e bigode chinês.",
             "Define e melhora o contorno da mandíbula.",
-            "Ajuste e defina o formato do nariz, corrigindo imperfeições estéticas sem a necessidade de cirurgia.",
+            "Ajuste e defina o formato do nariz, corrigindo imperfeições estéticas sem a necessidade de cirurgia (Rinomodelação).",
             "Proporciona volume, hidratação e contorno para os lábios.",
             "Resultados imediatos e naturais."
         ],
@@ -45,7 +45,7 @@ export const allServicos = [
         nome: "Bioestimulador de Colágeno",
         slug: "bioestimulador-de-colageno",
         imagem: "/servicos/3.png",
-        tags: ["rosto", "pescoco", "rejuvenescimento"],
+        tags: ["rosto, pescoco, rejuvenescimento, colágeno, flacidez, firmeza"],
         descricao: "Os bioestimuladores de colágeno são substâncias que, ao serem injetadas, provocam uma leve reação inflamatória que estimula seu próprio corpo a produzir novas fibras de colágeno, tratando a flacidez.",
         beneficios: [
             "Melhora a firmeza e a elasticidade da pele.",
@@ -65,7 +65,7 @@ export const allServicos = [
         nome: "Jato de Plasma",
         slug: "jato-de-plasma",
         imagem: "/servicos/4.webp",
-        tags: ["rosto", "manchas"],
+        tags: ["rosto, manchas, pálpebras, rugas finas, código de barras"],
         descricao: "O Jato de Plasma é uma tecnologia que utiliza um gás ionizado para promover a retração da pele e a renovação celular. É altamente eficaz para tratar áreas delicadas como as pálpebras.",
         beneficios: [
             "Tratamento de blefaroplastia (flacidez das pálpebras) sem cortes.",
@@ -85,7 +85,7 @@ export const allServicos = [
         nome: "Microagulhamento",
         slug: "microagulhamento",
         imagem: "/servicos/5.jpg",
-        tags: ["rosto", "manchas", "rejuvenescimento"],
+        tags: ["rosto, manchas, rejuvenescimento, cicatriz de acne, melasma, poros, viço"],
         descricao: "O microagulhamento (ou Indução Percutânea de Colágeno) utiliza microagulhas para criar canais na pele, estimulando a produção de colágeno e facilitando a entrega de ativos (drug delivery).",
         beneficios: [
             "Melhora a textura e o viço da pele.",
@@ -106,7 +106,7 @@ export const allServicos = [
         nome: "Ultrassom Microfocado",
         slug: "ultrassom-microfocado",
         imagem: "/servicos/6.jpg",
-        tags: ["rosto", "pescoco", "rejuvenescimento"],
+        tags: ["rosto, pescoco, rejuvenescimento, lifting, flacidez, papada"],
         descricao: "Tecnologia de ponta que promove um efeito 'lifting' não-cirúrgico. O ultrassom atinge as camadas mais profundas da pele (SMAS), causando pontos de coagulação que contraem o tecido e estimulam colágeno.",
         beneficios: [
             "Efeito lifting facial e de pescoço.",
@@ -124,7 +124,7 @@ export const allServicos = [
         nome: "Skinbooster",
         slug: "skinbooster",
         imagem: "/servicos/7.jpg",
-        tags: ["rosto", "labios", "pescoco", "hidratacao"],
+        tags: ["rosto, labios, pescoco, hidratacao, ácido hialurônico, viço, linhas finas"],
         descricao: "O Skinbooster é um tratamento focado em hidratação profunda da pele. Utiliza-se Ácido Hialurônico de baixa densidade, que não dá volume, mas atrai água para a região, melhorando o viço e a elasticidade.",
         beneficios: [
             "Hidratação profunda e duradoura.",
@@ -144,7 +144,7 @@ export const allServicos = [
         nome: "Fios de PDO",
         slug: "fios-de-pdo",
         imagem: "/servicos/8.webp",
-        tags: ["rosto", "rejuvenescimento"],
+        tags: ["rosto, rejuvenescimento, lifting, tração, colágeno, flacidez, contorno"],
         descricao: "Os Fios de PDO (Polidioxanona) são fios 100% absorvíveis que promovem um duplo efeito: tração (lifting imediato) e estímulo de colágeno (efeito prolongado) enquanto são absorvidos pelo organismo.",
         beneficios: [
             "Tração e suspensão dos tecidos faciais (efeito lifting).",

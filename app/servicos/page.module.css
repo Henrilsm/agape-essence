@@ -180,6 +180,12 @@
   text-align: left;
 }
 
+.cardBody p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
 .cardBody h3 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.1rem, 3vw, 1.25rem);
