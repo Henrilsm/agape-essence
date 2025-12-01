@@ -91,5 +91,3 @@ agape-essence/
 Este projeto é propriedade da Ágape Essence. Todos os direitos reservados.
 
 ---
-
-Desenvolvido com ❤️ para Ágape Essence
