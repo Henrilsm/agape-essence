@@ -20,7 +20,7 @@
 
   transition: transform 0.2s ease;
   
-  /* Força opacidade total - sem transparência */
+  /* Opacidade total */
   opacity: 1 !important;
 }
 
@@ -32,7 +32,7 @@
   transform: scale(1.1);
 }
 
-/* Mobile First - até 480px */
+/* Mobile até 480px */
 @media (max-width: 480px) {
   .whatsappButton {
     bottom: 1rem;
@@ -46,7 +46,7 @@
   }
 }
 
-/* Tablet - 481px a 768px */
+/* Tablet 481px-768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .whatsappButton {
     bottom: 1.5rem;
@@ -62,7 +62,7 @@
 
 
 
-/* Desktop - 769px+ */
+/* Desktop 769px+ */
 @media (min-width: 769px) {
   .whatsappButton {
     bottom: 2rem;

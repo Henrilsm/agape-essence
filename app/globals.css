@@ -11,11 +11,11 @@
   --text-quote-color: #6B6B6B;
   --white-color: #FFFFFF;
   
-  /* Força modo claro em todas as situações */
+  /* Força tema claro */
   color-scheme: light only;
 }
 
-/* Força modo claro independente da preferência do sistema */
+/* Override - Tema claro forçado */
 :root,
 :root[data-theme="dark"],
 :root[data-theme="light"] {
@@ -41,13 +41,13 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   height: 100%;
-  /* Força o site a sempre usar o tema claro, ignorando a preferência do dispositivo */
+  /* Tema claro fixo */
   color-scheme: light only !important;
   background-color: #F6F6F6 !important;
   color: #4B3F3A !important;
 }
 
-/* Sobrescreve qualquer tentativa de modo escuro */
+/* Previne modo escuro */
 html[data-theme="dark"],
 body[data-theme="dark"] {
   background-color: #F6F6F6 !important;
@@ -81,18 +81,18 @@ h6 {
   font-weight: 500;
 }
 
-/* Responsive utilities */
+/* Utilidades responsivas */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Smooth scrolling */
+/* Scroll suave */
 html {
   scroll-behavior: smooth;
 }
 
-/* Better text rendering */
+/* Renderização de texto otimizada */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

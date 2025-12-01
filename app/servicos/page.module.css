@@ -1,4 +1,4 @@
-/* --- NOVOS ESTILOS PARA O FUNDO --- */
+/* Background com efeito blur */
 .backgroundWrapper {
   background-color: var(--background-color);
   padding: clamp(2rem, 5vw, 3rem) 0;
@@ -20,7 +20,7 @@
   filter: blur(clamp(30px, 8vw, 50px));
 }
 
-/* --- CONTAINER PRINCIPAL ATUALIZADO --- */
+/* Container principal */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,7 +30,7 @@
   z-index: 1;
 }
 
-/* --- TÍTULOS --- */
+/* Títulos */
 .maintitle {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.8rem, 5vw, 2.5rem);
@@ -39,7 +39,7 @@
   margin-bottom: clamp(3rem, 8vw, 5rem);
 }
 
-/* --- CARROSSEL (Estilos antigos mantidos) --- */
+/* Carrossel de serviços */
 .carouselContainer {
   position: relative;
   margin-bottom: clamp(2rem, 6vw, 4rem);
@@ -84,7 +84,7 @@
   right: clamp(-10px, -3vw, -15px);
 }
 
-/* --- ESTILOS DOS CARDS ATUALIZADOS --- */
+/* Cards de serviços */
 .card {
   min-width: clamp(250px, 60vw, 270px);
   border-radius: clamp(8px, 2vw, 12px);
@@ -103,7 +103,7 @@
   background-color: var(--neutral-color);
 }
 
-/* Hover moderno: zoom da imagem, overlay suave, elevação e movimento do conteúdo */
+/* Hover - Zoom e elevação */
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 50px rgba(0,0,0,0.12);
@@ -114,11 +114,11 @@
 }
 
 .card:hover .cardImage {
-  /* sem zoom: apenas ajuste sutil de brilho para o overlay ficar mais legível */
+  /* Ajuste de brilho */
   filter: brightness(0.96);
 }
 
-/* overlay gradiente sutil sobre a imagem ao passar o mouse */
+/* Overlay gradiente hover */
 .cardImageWrapper {
   position: relative;
   overflow: hidden;
@@ -137,7 +137,7 @@
   opacity: 1;
 }
 
-/* movimento suave do corpo do card para destacar o título */
+/* Movimento suave do card */
 .cardBody {
   transform: translateY(0);
   transition: transform 0.35s ease;
@@ -147,7 +147,7 @@
   transform: translateY(-6px);
 }
 
-/* acreditações visuais do botão */
+/* Efeitos do botão */
 .cardButton {
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -180,12 +180,6 @@
   text-align: left;
 }
 
-.cardBody p {
-  text-align: justify;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
 .cardBody h3 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.1rem, 3vw, 1.25rem);
@@ -194,7 +188,7 @@
   color: var(--text-color);
 }
 
-/* Estilo para o link "Saiba Mais" que vem do JS */
+/* Link "Saiba Mais" */
 .cardButton {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
@@ -213,7 +207,7 @@
   opacity: 1 !important;
 }
 
-/* --- FORMULÁRIO DE BUSCA ATUALIZADO --- */
+/* Formulário de busca */
 .searchContainer {
   background-color: var(--neutral-color) !important;
   background: var(--neutral-color) !important;
@@ -237,7 +231,7 @@
   font-weight: 500;
 }
 
-/* --- ESTILOS DO FORMULÁRIO (Mantidos) --- */
+/* Estilos do formulário */
 .searchForm {
   display: flex;
   flex-direction: column;
@@ -310,7 +304,7 @@
   padding: 2rem;
 }
 
-/* Mobile First - até 480px */
+/* Mobile até 480px */
 @media (max-width: 480px) {
   .carouselButton {
     width: 32px;
@@ -355,7 +349,7 @@
   }
 }
 
-/* Tablet - 481px a 768px */
+/* Tablet 481px-768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .card {
     min-width: 300px;
@@ -366,7 +360,7 @@
   }
 }
 
-/* Desktop pequeno - 769px a 1024px */
+/* Desktop pequeno 769px-1024px */
 @media (min-width: 769px) {
   .searchForm {
     flex-direction: row;
@@ -396,7 +390,7 @@
   }
 }
 
-/* Desktop grande - 1025px+ */
+/* Desktop grande 1025px+ */
 @media (min-width: 1025px) {
   .card {
     min-width: 270px;

@@ -6,7 +6,7 @@
     padding: 0 clamp(0.5rem, 3vw, 1rem);
 }
 
-/* --- Botão de Voltar --- */
+/* Botão voltar */
 .backLink {
     display: inline-flex;
     align-items: center;
@@ -22,7 +22,7 @@
     text-decoration: underline;
 }
 
-/* --- Seção 1: Doutoras --- */
+/* Seção doutoras */
 .section {
     display: flex;
     flex-direction: column;
@@ -86,7 +86,7 @@
     color: var(--text-color);
 }
 
-/* --- Seção 2: Filosofia --- */
+/* Seção filosofia */
 .philosophySection {
     background-color: var(--primary-light-color);
     padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
@@ -112,7 +112,7 @@
     line-height: 1.8;
 }
 
-/* --- Seção 3: Verso --- */
+/* Seção verso */
 .verseSection {
     text-align: center;
     padding: clamp(1.5rem, 4vw, 2rem);
@@ -130,7 +130,7 @@
     font-weight: bold;
 }
 
-/* Mobile First - até 480px */
+/* Mobile até 480px */
 @media (max-width: 480px) {
     .container {
         margin: 1rem auto;
@@ -154,7 +154,7 @@
     }
 }
 
-/* Tablet - 481px a 768px */
+/* Tablet 481px-768px */
 @media (min-width: 481px) and (max-width: 768px) {
     .section {
         gap: 2rem;
@@ -165,7 +165,7 @@
     }
 }
 
-/* Desktop pequeno - 769px a 1024px */
+/* Desktop pequeno 769px-1024px */
 @media (min-width: 769px) {
     .section {
         flex-direction: row;
@@ -181,7 +181,7 @@
     }
 }
 
-/* Desktop grande - 1025px+ */
+/* Desktop grande 1025px+ */
 @media (min-width: 1025px) {
     .container {
         margin: 3rem auto;

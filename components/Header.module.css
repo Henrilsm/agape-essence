@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-/* --- ESTILOS DO LOGO RESPONSIVOS --- */
+/* Logo responsivo */
 .logoLink {
   display: flex;
   align-items: center;
@@ -41,9 +41,9 @@
   height: 100%;
   object-position: center;
 }
-/* --- FIM DOS ESTILOS DO LOGO --- */
 
-/* ESTILO DOS LINKS DE NAVEGAÇÃO (TEXTO) */
+
+/* Links de navegação */
 .nav {
   display: flex;
   gap: 1.5rem;
@@ -80,7 +80,7 @@
   width: 100%;
 }
 
-/* BOTÃO DE BUSCA RESPONSIVO */
+/* Botão de busca */
 .searchButton {
   background-color: transparent !important;
   background: transparent !important;
@@ -108,7 +108,7 @@
   opacity: 1 !important;
 }
 
-/* Mobile First - até 480px */
+/* Mobile até 480px */
 @media (max-width: 480px) {
   .header {
     padding: 0.3rem 0.5rem;
@@ -129,7 +129,7 @@
   }
 }
 
-/* Tablet - 481px a 768px */
+/* Tablet 481px-768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .header {
     padding: 0.4rem 0.75rem;
@@ -144,7 +144,7 @@
   }
 }
 
-/* Mobile responsivo - Desktop mantém tamanhos fixos */
+/* Mobile responsivo */
 @media (max-width: 768px) {
   .header {
     padding: 0.4rem 0.75rem;

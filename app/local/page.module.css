@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-/* Forma decorativa no fundo responsiva */
+/* Forma decorativa responsiva */
 .container::after {
   content: '';
   position: absolute;
@@ -59,7 +59,7 @@
   margin-bottom: clamp(3rem, 8vw, 5rem);
 }
 
-/* Nossa Estrutura gallery styles */
+/* Galeria estrutura */
 .structureSection {
   padding: clamp(1.5rem, 4vw, 2rem) 0 clamp(2rem, 5vw, 3rem) 0;
 }
@@ -106,7 +106,7 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile First - até 480px */
+/* Mobile até 480px */
 @media (max-width: 480px) {
   .container {
     padding: 1.5rem 0.5rem;
@@ -125,7 +125,7 @@
   }
 }
 
-/* Tablet - 481px a 768px */
+/* Tablet 481px-768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .roomImages {
     grid-template-columns: 1fr 1fr;
@@ -140,7 +140,7 @@
   }
 }
 
-/* Desktop pequeno - 769px a 1024px */
+/* Desktop pequeno 769px-1024px */
 @media (min-width: 769px) {
   .roomImages {
     grid-template-columns: 1fr 1fr;
@@ -155,7 +155,7 @@
   }
 }
 
-/* Desktop grande - 1025px+ */
+/* Desktop grande 1025px+ */
 @media (min-width: 1025px) {
   .container {
     padding: 3rem 1rem;

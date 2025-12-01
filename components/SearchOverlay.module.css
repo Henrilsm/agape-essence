@@ -117,7 +117,7 @@
   font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-/* Mobile First - até 480px */
+/* Mobile até 480px */
 @media (max-width: 480px) {
   .overlay {
     padding-top: 5vh;
@@ -145,7 +145,7 @@
   }
 }
 
-/* Tablet - 481px a 768px */
+/* Tablet 481px-768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .overlay {
     padding-top: 7vh;
@@ -162,7 +162,7 @@
   }
 }
 
-/* Desktop - 769px+ */
+/* Desktop 769px+ */
 @media (min-width: 769px) {
   .overlay {
     padding-top: 10vh;
