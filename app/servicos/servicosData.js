@@ -45,7 +45,7 @@ export const allServicos = [
         nome: "Bioestimulador de Colágeno",
         slug: "bioestimulador-de-colageno",
         imagem: "/servicos/3.png",
-        tags: ["rosto, pescoco, rejuvenescimento, colágeno, flacidez, firmeza"],
+        tags: ["rosto", "pescoco", "rejuvenescimento", "colágeno", "flacidez", "firmeza"],
         descricao: "Os bioestimuladores de colágeno são substâncias que, ao serem injetadas, provocam uma leve reação inflamatória que estimula seu próprio corpo a produzir novas fibras de colágeno, tratando a flacidez.",
         beneficios: [
             "Melhora a firmeza e a elasticidade da pele.",
@@ -65,7 +65,7 @@ export const allServicos = [
         nome: "Jato de Plasma",
         slug: "jato-de-plasma",
         imagem: "/servicos/4.webp",
-        tags: ["rosto, manchas, pálpebras, rugas finas, código de barras"],
+        tags: ["rosto", "manchas", "pálpebras", "rugas finas", "código de barras"],
         descricao: "O Jato de Plasma é uma tecnologia que utiliza um gás ionizado para promover a retração da pele e a renovação celular. É altamente eficaz para tratar áreas delicadas como as pálpebras.",
         beneficios: [
             "Tratamento de blefaroplastia (flacidez das pálpebras) sem cortes.",
@@ -85,7 +85,7 @@ export const allServicos = [
         nome: "Microagulhamento",
         slug: "microagulhamento",
         imagem: "/servicos/5.jpg",
-        tags: ["rosto, manchas, rejuvenescimento, cicatriz de acne, melasma, poros, viço"],
+        tags: ["rosto", "manchas", "rejuvenescimento", "cicatriz de acne", "melasma", "poros", "viço"],
         descricao: "O microagulhamento (ou Indução Percutânea de Colágeno) utiliza microagulhas para criar canais na pele, estimulando a produção de colágeno e facilitando a entrega de ativos (drug delivery).",
         beneficios: [
             "Melhora a textura e o viço da pele.",
@@ -106,7 +106,7 @@ export const allServicos = [
         nome: "Ultrassom Microfocado",
         slug: "ultrassom-microfocado",
         imagem: "/servicos/6.jpg",
-        tags: ["rosto, pescoco, rejuvenescimento, lifting, flacidez, papada"],
+        tags: ["rosto", "pescoco", "rejuvenescimento", "lifting", "flacidez", "papada"],
         descricao: "Tecnologia de ponta que promove um efeito 'lifting' não-cirúrgico. O ultrassom atinge as camadas mais profundas da pele (SMAS), causando pontos de coagulação que contraem o tecido e estimulam colágeno.",
         beneficios: [
             "Efeito lifting facial e de pescoço.",
@@ -124,7 +124,7 @@ export const allServicos = [
         nome: "Skinbooster",
         slug: "skinbooster",
         imagem: "/servicos/7.jpg",
-        tags: ["rosto, labios, pescoco, hidratacao, ácido hialurônico, viço, linhas finas"],
+        tags: ["rosto", "labios", "pescoco", "hidratacao", "ácido hialurônico", "viço", "linhas finas"],
         descricao: "O Skinbooster é um tratamento focado em hidratação profunda da pele. Utiliza-se Ácido Hialurônico de baixa densidade, que não dá volume, mas atrai água para a região, melhorando o viço e a elasticidade.",
         beneficios: [
             "Hidratação profunda e duradoura.",
@@ -144,7 +144,7 @@ export const allServicos = [
         nome: "Fios de PDO",
         slug: "fios-de-pdo",
         imagem: "/servicos/8.webp",
-        tags: ["rosto, rejuvenescimento, lifting, tração, colágeno, flacidez, contorno"],
+        tags: ["rosto", "rejuvenescimento", "lifting", "tração", "colágeno", "flacidez", "contorno"],
         descricao: "Os Fios de PDO (Polidioxanona) são fios 100% absorvíveis que promovem um duplo efeito: tração (lifting imediato) e estímulo de colágeno (efeito prolongado) enquanto são absorvidos pelo organismo.",
         beneficios: [
             "Tração e suspensão dos tecidos faciais (efeito lifting).",

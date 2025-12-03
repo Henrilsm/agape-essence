@@ -84,7 +84,6 @@ agape-essence/
 - Guilherme Serretti
 - Henri Leonardo
 - Igor Leal
-- Luís Felipe
 
 ## 📄 Licença
 
